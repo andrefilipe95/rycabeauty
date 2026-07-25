@@ -430,7 +430,13 @@ button {
   letter-spacing: 0.035em;
   /* shiny gold gradient fill with stronger glow and fallback */
   color: transparent;
-  background: linear-gradient(90deg, #fff6d9 0%, #f3dfac 35%, #d1b071 65%, #c9a66b 100%);
+  background: linear-gradient(
+    90deg,
+    #fff6d9 0%,
+    #f3dfac 35%,
+    #d1b071 65%,
+    #c9a66b 100%
+  );
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -447,8 +453,12 @@ button {
   height: 4px;
   margin: 12px auto 0;
   border-radius: 3px;
-  background: linear-gradient(90deg, rgba(255,244,214,0.95), rgba(201,166,107,0.95));
-  box-shadow: 0 6px 18px rgba(176,141,87,0.12);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 244, 214, 0.95),
+    rgba(201, 166, 107, 0.95)
+  );
+  box-shadow: 0 6px 18px rgba(176, 141, 87, 0.12);
 }
 .hero__scroll {
   position: absolute;
