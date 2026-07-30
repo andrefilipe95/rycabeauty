@@ -42,6 +42,82 @@ document.addEventListener("DOMContentLoaded", () => {
     ".section-heading, .service-card, .concern-card, .comparison-card, .gallery-item, .about-grid > *, .location-grid > *, .contact-grid > *, .faq details, .testimonial-card, .empty-state"
   );
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const progressBar = document.querySelector("[data-scroll-progress]");
+  const backToTop = document.querySelector("[data-back-to-top]");
+  const heroMedia = document.querySelector(".hero-media img");
+  const homeNavLinks = [...document.querySelectorAll(".main-nav a")];
+  const homeSections = window.location.pathname === "/"
+    ? [...document.querySelectorAll("main > section[id]")]
+    : [];
+  const sectionNavMap = {
+    tratamentos: "/tratamentos/",
+    problemas: "/problemas/",
+    localizacao: "#contactos",
+    contactos: "#contactos"
+  };
+
+  const findNavLink = (target) => homeNavLinks.find((link) => {
+    const href = link.getAttribute("href");
+    if (target === "/") return new URL(link.href, window.location.href).pathname === "/" && href !== "#contactos";
+    return href === target || new URL(link.href, window.location.href).pathname === target;
+  });
+
+  const updateActiveSection = () => {
+    if (homeSections.length === 0) return;
+    const marker = window.scrollY + window.innerHeight * 0.38;
+    let activeSection = homeSections[0];
+    homeSections.forEach((section) => {
+      if (section.offsetTop <= marker) activeSection = section;
+    });
+    const target = sectionNavMap[activeSection?.id] || "/";
+    const activeLink = findNavLink(target);
+    homeNavLinks.forEach((link) => {
+      const isActive = link === activeLink;
+      link.classList.toggle("is-section-active", isActive);
+      if (isActive) {
+        link.setAttribute("aria-current", "location");
+      } else {
+        link.removeAttribute("aria-current");
+      }
+    });
+  };
+
+  let scrollEffectsRequested = false;
+  const updateScrollEffects = () => {
+    const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = scrollableHeight > 0
+      ? Math.min(1, Math.max(0, window.scrollY / scrollableHeight))
+      : 0;
+    progressBar?.style.setProperty("--scroll-progress", String(progress));
+
+    const showBackToTop = window.scrollY > Math.max(520, window.innerHeight * 0.75);
+    backToTop?.classList.toggle("is-visible", showBackToTop);
+    backToTop?.setAttribute("aria-hidden", String(!showBackToTop));
+    if (backToTop) backToTop.tabIndex = showBackToTop ? 0 : -1;
+
+    if (heroMedia && !reduceMotion) {
+      const maximumOffset = window.innerWidth <= 680 ? 18 : 32;
+      const offset = Math.min(maximumOffset, window.scrollY * 0.045);
+      heroMedia.style.setProperty("--hero-parallax", `${offset}px`);
+    }
+
+    updateActiveSection();
+    scrollEffectsRequested = false;
+  };
+
+  const requestScrollEffects = () => {
+    if (scrollEffectsRequested) return;
+    scrollEffectsRequested = true;
+    window.requestAnimationFrame(updateScrollEffects);
+  };
+
+  window.addEventListener("scroll", requestScrollEffects, { passive: true });
+  window.addEventListener("resize", requestScrollEffects);
+  backToTop?.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
+  });
+  updateScrollEffects();
+
   if (!reduceMotion && "IntersectionObserver" in window) {
     document.documentElement.classList.add("reveal-enabled");
     const revealObserver = new IntersectionObserver((entries, observer) => {

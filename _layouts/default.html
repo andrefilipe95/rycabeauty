@@ -8,10 +8,23 @@
     {% endif %}
   </head>
   <body class="page-{{ page.layout }}">
+    <div class="scroll-progress" aria-hidden="true">
+      <span data-scroll-progress></span>
+    </div>
     {% include header.html %}
     <main id="conteudo">{{ content }}</main>
     {% include footer.html %} {% include whatsapp-float.html %} {% include
     cookie-settings.html %}
-    <script src="{{ '/assets/js/site.js?v=20260730-2' | relative_url }}" defer></script>
+    <button
+      class="back-to-top"
+      type="button"
+      data-back-to-top
+      aria-label="Voltar ao início da página"
+      aria-hidden="true"
+      tabindex="-1"
+    >
+      <span aria-hidden="true"></span>
+    </button>
+    <script src="{{ '/assets/js/site.js?v=20260730-3' | relative_url }}" defer></script>
   </body>
 </html>
