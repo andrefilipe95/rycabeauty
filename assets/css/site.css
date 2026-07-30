@@ -52,13 +52,17 @@
 .gallery-lightbox{position:fixed;z-index:2100;inset:0;display:none;place-items:center;padding:24px}
 .gallery-lightbox.open{display:grid}
 .gallery-lightbox-backdrop{position:absolute;inset:0;background:rgba(12,7,5,.9);backdrop-filter:blur(10px)}
-.gallery-lightbox-dialog{position:relative;z-index:1;display:grid;place-items:center;max-width:min(940px,92vw);max-height:90vh}
+.gallery-lightbox-dialog{position:relative;z-index:1;width:min(940px,92vw);max-height:90vh;outline:none}
+.gallery-lightbox-stage{position:relative;display:grid;min-height:220px;place-items:center;touch-action:pan-y}
 .gallery-lightbox-dialog img{width:auto;max-width:100%;max-height:90vh;object-fit:contain;box-shadow:0 25px 80px rgba(0,0,0,.45)}
-.gallery-lightbox-close{position:absolute;z-index:2;top:-18px;right:-18px;display:grid;place-items:center;width:48px;height:48px;padding:0;border:1px solid rgba(230,201,149,.72);border-radius:50%;background:rgba(43,26,18,.9);color:var(--gold);box-shadow:0 12px 30px rgba(0,0,0,.34);backdrop-filter:blur(12px);transition:transform .28s ease,background .28s ease,border-color .28s ease}
-.gallery-lightbox-close span{position:absolute;width:20px;height:1.5px;border-radius:999px;background:currentColor}
-.gallery-lightbox-close span:first-child{transform:rotate(45deg)}
-.gallery-lightbox-close span:last-child{transform:rotate(-45deg)}
-.gallery-lightbox-close:hover,.gallery-lightbox-close:focus-visible{transform:rotate(90deg) scale(1.06);border-color:var(--gold);background:var(--gold);color:var(--brown)}
+.gallery-lightbox-nav{position:absolute;z-index:2;top:50%;display:grid;width:48px;height:48px;padding:0;place-items:center;border:1px solid rgba(230,201,149,.68);border-radius:50%;background:rgba(43,26,18,.82);color:var(--gold);box-shadow:0 10px 28px rgba(0,0,0,.3);transform:translateY(-50%);transition:background .2s,color .2s,transform .2s}
+.gallery-lightbox-nav--previous{left:14px}
+.gallery-lightbox-nav--next{right:14px}
+.gallery-lightbox-nav span{width:11px;height:11px;border-bottom:2px solid currentColor;border-left:2px solid currentColor}
+.gallery-lightbox-nav--previous span{transform:translateX(2px) rotate(45deg)}
+.gallery-lightbox-nav--next span{transform:translateX(-2px) rotate(225deg)}
+.gallery-lightbox-nav:hover,.gallery-lightbox-nav:focus-visible{background:var(--gold);color:var(--brown);transform:translateY(-50%) scale(1.06)}
+.gallery-consent-note{max-width:650px;margin:-1rem auto 2rem;color:#d9cfc5;font-size:.82rem;text-align:center}
 .modal-open{overflow:hidden}
 
 /* Botão flutuante de WhatsApp */
@@ -75,6 +79,13 @@
   .social-link{width:100%}
   .social-links--gallery .social-link{justify-content:center;text-align:center}
   .social-links--gallery .social-link span{align-items:center}
+  .gallery-lightbox{padding:14px}
+  .gallery-lightbox-dialog{width:min(100%,94vw)}
+  .gallery-lightbox-nav{top:auto;bottom:12px;width:44px;height:44px;transform:none}
+  .gallery-lightbox-nav:hover,.gallery-lightbox-nav:focus-visible{transform:scale(1.04)}
+  .gallery-lightbox-nav--previous{left:12px}
+  .gallery-lightbox-nav--next{right:12px}
+  .gallery-lightbox-dialog img{max-height:88vh}
   .whatsapp-float{left:14px;bottom:14px;width:54px;height:54px;min-height:54px;padding:0;justify-content:center}
   .whatsapp-float span{display:none}
 }

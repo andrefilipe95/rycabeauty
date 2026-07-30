@@ -359,6 +359,10 @@ permalink: /
         />
       </button>
     </div>
+    <p class="gallery-consent-note">
+      As imagens de clientes são publicadas com autorização. Cada pele é única
+      e os resultados podem variar.
+    </p>
     {% include social-links.html context="gallery" %}
   </div>
 </section>
@@ -370,17 +374,27 @@ permalink: /
     role="dialog"
     aria-modal="true"
     aria-label="Imagem ampliada da galeria"
+    tabindex="-1"
   >
-    <button
-      class="gallery-lightbox-close"
-      type="button"
-      data-gallery-close
-      aria-label="Fechar imagem"
-    >
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </button>
-    <img data-gallery-lightbox-image src="" alt="" />
+    <div class="gallery-lightbox-stage">
+      <button
+        class="gallery-lightbox-nav gallery-lightbox-nav--previous"
+        type="button"
+        data-gallery-previous
+        aria-label="Ver imagem anterior"
+      >
+        <span aria-hidden="true"></span>
+      </button>
+      <img data-gallery-lightbox-image src="" alt="" />
+      <button
+        class="gallery-lightbox-nav gallery-lightbox-nav--next"
+        type="button"
+        data-gallery-next
+        aria-label="Ver imagem seguinte"
+      >
+        <span aria-hidden="true"></span>
+      </button>
+    </div>
   </div>
 </div>
 
