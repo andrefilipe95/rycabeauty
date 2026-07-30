@@ -63,10 +63,12 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll("[data-before-after]").forEach((comparison) => {
     const range = comparison.querySelector("[data-before-after-range]");
     const updateComparison = () => {
-      comparison.setAttribute("data-position", `${range.value}%`);
+      const position = `${range.value}%`;
+      comparison.setAttribute("data-position", position);
+      comparison.style.setProperty("--comparison-position", position);
     };
     range?.addEventListener("input", updateComparison);
-    if (range) comparison.setAttribute("data-position", `${range.value}%`);
+    if (range) updateComparison();
   });
 
   const lightbox = document.querySelector("[data-gallery-lightbox]");

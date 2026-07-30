@@ -11,7 +11,7 @@
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
 
 /* Comparador antes/depois */
-.before-after{--comparison-position:attr(data-position type(<percentage>),50%);position:relative;overflow:hidden;width:min(560px,100%);margin-inline:auto;aspect-ratio:8/10;background:#160d09;box-shadow:0 24px 65px rgba(0,0,0,.28);touch-action:pan-y}
+.before-after{--comparison-position:50%;position:relative;overflow:hidden;width:min(560px,100%);margin-inline:auto;aspect-ratio:8/10;background:#160d09;box-shadow:0 24px 65px rgba(0,0,0,.28);touch-action:pan-y}
 .before-after-image{position:absolute;inset:0}
 .before-after-image img{width:100%;height:100%;object-fit:cover}
 .before-after-image--before{z-index:1;clip-path:inset(0 calc(100% - var(--comparison-position)) 0 0)}
