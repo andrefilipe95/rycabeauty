@@ -6,7 +6,7 @@ description: Conheça sinais de envelhecimento da pele e os cuidados estéticos 
 section_name: Preocupações
 section_url: /problemas/
 image: /assets/images/problemas/linhas-finas-envelhecimento-v2.webp
-image_alt: Retrato de pele madura com linhas finas naturais junto aos olhos
+image_alt: Retrato de pele madura com linhas e sinais de envelhecimento visíveis
 intro: Linhas finas, alterações de textura e menor uniformidade podem tornar-se mais visíveis com o tempo.
 related_treatments:
   - hifu-facial-seixal

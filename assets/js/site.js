@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   const revealItems = document.querySelectorAll(
-    ".section-heading, .service-card, .concern-card, .comparison-card, .gallery-item, .about-grid > *, .location-grid > *, .contact-grid > *, .faq details, .review-card, .empty-state"
+    ".section-heading, .service-card, .concern-card, .comparison-card, .gallery-item, .about-grid > *, .location-grid > *, .contact-grid > *, .faq details, .testimonial-card, .empty-state"
   );
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (!reduceMotion && "IntersectionObserver" in window) {

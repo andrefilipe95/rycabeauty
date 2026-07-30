@@ -4,7 +4,7 @@ url: https://rycabeauty.com
 baseurl: ""
 lang: pt-PT
 timezone: Europe/Lisbon
-problem_images_version: "20260730-1"
+problem_images_version: "20260730-2"
 permalink: /blog/:title/
 markdown: kramdown
 future: false

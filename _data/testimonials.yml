@@ -1,0 +1,9 @@
+# Adicione apenas testemunhos reais e expressamente autorizados.
+# Guarde o comprovativo da autorização fora deste repositório público.
+#
+# Exemplo (mantenha authorized: false até obter autorização):
+# - name: "Ana M."
+#   service: "Limpeza de Pele Profunda"
+#   text: "Texto autorizado pela cliente."
+#   authorized: false
+[]

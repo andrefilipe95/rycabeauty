@@ -2,11 +2,11 @@
 layout: treatment
 title: Dermaplaning
 seo_title: Dermaplaning
-description: Conheça o dermaplaning, uma técnica de esfoliação superficial que remove células acumuladas e pelo fino do rosto.
+description: Conheça o dermaplaning, um procedimento estético que remove delicadamente células mortas da superfície da pele e a penugem facial.
 slug: dermaplaning-seixal
 section_name: Tratamentos
 section_url: /tratamentos/
-intro: Uma técnica de esfoliação superficial que remove células acumuladas e pelo fino, respeitando a sensibilidade da pele.
+intro: Um procedimento delicado que remove células mortas e penugem facial, respeitando as características e a sensibilidade da pele.
 image: /assets/images/tratamentos/dermaplaning-seixal.webp
 image_alt: Profissional a realizar dermaplaning facial
 faq:
@@ -18,7 +18,7 @@ faq:
 
 ## O que é
 
-O dermaplaning é uma esfoliação superficial que remove células acumuladas e pelo fino do rosto. É realizado com uma lâmina própria, através de movimentos suaves e controlados.
+O dermaplaning é um procedimento que remove delicadamente as células mortas acumuladas na camada mais superficial da pele e a penugem facial. É realizado com uma lâmina estéril específica, através de movimentos suaves e controlados.
 
 ## O que pode proporcionar
 

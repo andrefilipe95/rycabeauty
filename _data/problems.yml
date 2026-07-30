@@ -44,13 +44,13 @@
   name: Flacidez facial
   summary: A perda gradual de firmeza pode tornar-se mais visível no contorno facial, nas bochechas e no pescoço.
   image: /assets/images/problemas/flacidez-facial-v2.webp
-  alt: Perfil de rosto maduro com o contorno facial e o pescoço visíveis
+  alt: Perfil de rosto maduro com flacidez visível no contorno facial e no pescoço
   featured: true
 - slug: linhas-finas-e-envelhecimento
   name: Linhas finas e sinais de envelhecimento
   summary: Linhas, alterações de textura e menor uniformidade podem tornar-se mais visíveis com o tempo.
   image: /assets/images/problemas/linhas-finas-envelhecimento-v2.webp
-  alt: Retrato de pele madura com linhas finas naturais junto aos olhos
+  alt: Retrato de pele madura com linhas e sinais de envelhecimento visíveis
   featured: false
 - slug: pele-baca-e-falta-de-luminosidade
   name: Pele baça e falta de luminosidade

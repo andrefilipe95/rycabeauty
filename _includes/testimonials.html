@@ -1,0 +1,35 @@
+<section
+  class="section testimonials"
+  id="testemunhos"
+  aria-labelledby="testimonials-title"
+>
+  <div class="container narrow center">
+    <p class="eyebrow">Experiências reais</p>
+    <h2 id="testimonials-title">Testemunhos</h2>
+    <p>
+      Cada experiência é única. Aqui poderá conhecer a opinião de clientes que
+      confiaram na Ryca Beauty para cuidar da sua pele.
+    </p>
+    {% assign authorized_testimonials = site.data.testimonials | where:
+    "authorized", true %} {% if authorized_testimonials.size > 0 %}
+    <div class="testimonial-grid">
+      {% for testimonial in authorized_testimonials %}
+      <figure class="testimonial-card">
+        <blockquote>“{{ testimonial.text }}”</blockquote>
+        <figcaption>
+          <strong>{{ testimonial.name }}</strong>
+          {% if testimonial.service %}
+          <span>{{ testimonial.service }}</span>
+          {% endif %}
+        </figcaption>
+      </figure>
+      {% endfor %}
+    </div>
+    {% else %}
+    <p class="empty-state">
+      Em breve poderá conhecer experiências partilhadas por clientes da Ryca
+      Beauty.
+    </p>
+    {% endif %}
+  </div>
+</section>

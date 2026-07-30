@@ -6,3 +6,13 @@ vendor/
 .bundle/
 rubyinstaller-*.exe
 _test_artifacts/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.db
+*.sqlite
+*.bak

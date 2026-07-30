@@ -6,7 +6,7 @@ description: Conheça os cuidados estéticos relacionados com a aparência de fl
 section_name: Preocupações
 section_url: /problemas/
 image: /assets/images/problemas/flacidez-facial-v2.webp
-image_alt: Perfil de rosto maduro com o contorno facial e o pescoço visíveis
+image_alt: Perfil de rosto maduro com flacidez visível no contorno facial e no pescoço
 intro: A firmeza da pele pode alterar-se com a idade, a exposição solar e as características individuais.
 related_treatments:
   - hifu-facial-seixal
