@@ -1,0 +1,35 @@
+title: Ryca Beauty
+description: Tratamentos Faciais e Depilação a Laser em Seixal e Almada, com avaliação personalizada.
+url: https://rycabeauty.com
+baseurl: ""
+lang: pt-PT
+timezone: Europe/Lisbon
+problem_images_version: "20260730-1"
+permalink: /blog/:title/
+markdown: kramdown
+future: false
+show_drafts: false
+exclude:
+  - Dockerfile
+  - compose.yml
+  - .dockerignore
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - node_modules
+  - vendor
+  - .tools
+  - rubyinstaller-3.3.11-1-x64.exe
+  - scripts
+  - tests
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+      image: /assets/images/logo.jpeg
+  - scope:
+      path: "_posts"
+    values:
+      layout: post
+      type: article

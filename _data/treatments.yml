@@ -1,0 +1,64 @@
+- slug: limpeza-de-pele-seixal
+  name: Limpeza de Pele Profunda
+  short: Limpeza profunda, desobstrução de poros e cuidado facial adaptado às características da pele.
+  image: /assets/images/tratamentos/limpeza-pele-profunda-seixal.webp
+  alt: Profissional a realizar uma limpeza de pele
+  concerns:
+    - slug: pele-oleosa
+      name: Pele oleosa
+    - slug: pontos-negros-e-poros-obstruidos
+      name: Poros visíveis e obstruídos
+    - slug: acne-e-pele-acneica
+      name: Pele com tendência acneica
+- slug: depilacao-a-laser-seixal
+  name: Depilação a Laser
+  short: Redução progressiva do pelo com parâmetros ajustados ao tom da pele, ao tipo de pelo e à zona.
+  image: /assets/images/tratamentos/depilacao-laser-seixal.webp
+  alt: Equipamento utilizado num tratamento de depilação a laser
+  concerns:
+    - slug: pelos-indesejados-e-encravados
+      name: Pelos indesejados e encravados
+- slug: microagulhamento-seixal
+  name: Microagulhamento
+  short: Tratamento de renovação da pele que ajuda a melhorar a textura, marcas e a uniformidade da pele.
+  image: /assets/images/tratamentos/microagulhamento-seixal.webp
+  alt: Sessão de microagulhamento facial
+  concerns:
+    - slug: marcas-de-acne
+      name: Marcas de acne
+    - slug: textura-irregular
+      name: Textura irregular
+    - slug: linhas-finas-e-envelhecimento
+      name: Linhas finas
+- slug: dermaplaning-seixal
+  name: Dermaplaning
+  short: Técnica de esfoliação superficial que remove células acumuladas e pelo fino à superfície.
+  image: /assets/images/tratamentos/dermaplaning-seixal.webp
+  alt: Sessão de dermaplaning facial
+  concerns:
+    - slug: textura-irregular
+      name: Textura irregular
+    - slug: pele-baca-e-falta-de-luminosidade
+      name: Pele baça
+- slug: peeling-facial-seixal
+  name: Peeling Facial
+  short: Renovação superficial com intensidade ajustada ao objetivo e à sensibilidade da pele.
+  image: /assets/images/tratamentos/peeling-facial-seixal.webp
+  alt: Aplicação profissional de peeling facial
+  concerns:
+    - slug: manchas-e-hiperpigmentacao
+      name: Manchas
+    - slug: textura-irregular
+      name: Textura irregular
+    - slug: marcas-de-acne
+      name: Marcas de acne
+- slug: hifu-facial-seixal
+  name: HIFU Facial
+  short: Tratamento não invasivo que contribui para melhorar a firmeza e a definição do rosto.
+  image: /assets/images/tratamentos/hifu-facial-seixal.webp
+  alt: Aplicação de HIFU na zona facial
+  concerns:
+    - slug: flacidez-facial
+      name: Flacidez facial
+    - slug: linhas-finas-e-envelhecimento
+      name: Sinais de envelhecimento

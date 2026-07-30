@@ -1,0 +1,87 @@
+---
+layout: default
+---
+
+<article>
+  <header class="inner-hero">
+    <div class="container narrow">
+      {% include breadcrumbs.html %}
+      <p class="eyebrow">Preocupação da pele</p>
+      <h1>{{ page.title }}</h1>
+      <p class="lead">{{ page.intro }}</p>
+      <a class="button" href="{{ '/contactos/' | relative_url }}"
+        >Marcar avaliação</a
+      >
+    </div>
+  </header>
+  <div class="container article-grid">
+    <div class="prose">
+      {{ content }} {% if page.related_treatments %}
+      <section
+        class="problem-treatment-options"
+        aria-labelledby="treatment-options-title"
+      >
+        <h2 id="treatment-options-title">
+          Tratamentos que podem ser considerados
+        </h2>
+        <p>
+          Estes tratamentos podem estar relacionados com esta preocupação. A
+          avaliação permite perceber quais poderão ser adequados às
+          características da sua pele.
+        </p>
+        <div class="treatment-option-list">
+          {% for treatment_slug in page.related_treatments %} {% assign
+          treatment = site.data.treatments | where: "slug", treatment_slug |
+          first %} {% if treatment %}
+          <a class="treatment-option" href="/tratamentos/{{ treatment.slug }}/">
+            <span>{{ treatment.name }}</span>
+            <small>Conhecer o tratamento</small>
+          </a>
+          {% endif %} {% endfor %}
+        </div>
+      </section>
+      {% endif %}
+      <h2>Perguntas frequentes</h2>
+      {% for item in page.faq %}
+      <details>
+        <summary>{{ item.question }}</summary>
+        <p></p>
+        <p>{{ item.answer }}</p>
+      </details>
+      {% endfor %}
+      <div class="article-cta">
+        <h2>A escolha do tratamento começa com uma avaliação.</h2>
+        <p>
+          A avaliação permite esclarecer aquilo que a preocupa e identificar os
+          tratamentos que poderão fazer sentido.
+        </p>
+        <a class="button" href="{{ '/contactos/' | relative_url }}"
+          >Solicitar orientação</a
+        >
+      </div>
+    </div>
+    <aside class="article-aside">
+      {% assign small_image = page.image | replace: '.webp', '-480.webp' %}
+      <img
+        src="{{ page.image | relative_url }}?v={{ site.problem_images_version }}"
+        srcset="{{ small_image | relative_url }}?v={{ site.problem_images_version }} 480w, {{ page.image | relative_url }}?v={{ site.problem_images_version }} 836w"
+        sizes="(max-width: 900px) calc(100vw - 40px), 320px"
+        alt="{{ page.image_alt }}"
+        width="836"
+        height="471"
+        loading="eager"
+      />
+    </aside>
+  </div>
+</article>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Início", "item": "https://rycabeauty.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Preocupações", "item": "https://rycabeauty.com/problemas/"},
+      {"@type": "ListItem", "position": 3, "name": {{ page.title | jsonify }}, "item": {{ page.url | absolute_url | jsonify }}}
+    ]
+  }
+</script>

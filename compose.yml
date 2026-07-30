@@ -1,0 +1,20 @@
+services:
+  site:
+    build:
+      context: .
+    ports:
+      - "127.0.0.1:4000:4000"
+      - "127.0.0.1:35729:35729"
+    volumes:
+      - type: bind
+        source: .
+        target: /srv/jekyll
+        read_only: true
+    init: true
+    read_only: true
+    tmpfs:
+      - /tmp
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true

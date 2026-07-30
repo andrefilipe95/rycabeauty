@@ -1,0 +1,11 @@
+# Adicione apenas avaliações reais, verificáveis e autorizadas.
+# Exemplo de estrutura (mantenha authorized: false até obter autorização):
+# - name: "M. A."
+#   service: "Limpeza de pele"
+#   text: "Texto autorizado pela cliente."
+#   rating: 5
+#   date: 2026-07-28
+#   source: "Google"
+#   authorized: false
+[]
+

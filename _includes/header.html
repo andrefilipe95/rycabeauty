@@ -1,0 +1,47 @@
+{% assign contact_url = '/contactos/' | relative_url %}
+{% if page.url == '/' %}
+  {% assign contact_url = '#contactos' %}
+{% endif %}
+<a class="skip-link" href="#conteudo">Saltar para o conteúdo</a>
+<header class="site-header" id="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="{{ '/' | relative_url }}" aria-label="Ryca Beauty — início">
+      <span class="brand-main">RYCA</span><span class="brand-sub">Beauty</span>
+    </a>
+    <button class="menu-toggle" type="button" aria-controls="main-nav" aria-expanded="false">
+      <span class="sr-only">Abrir menu</span><span></span><span></span><span></span>
+    </button>
+    <nav class="main-nav" id="main-nav" aria-label="Navegação principal">
+      <a href="{{ '/' | relative_url }}" {% if page.url == '/' %}aria-current="page"{% endif %}>Início</a>
+      <a href="{{ '/tratamentos/' | relative_url }}" {% if page.url contains '/tratamentos/' %}aria-current="page"{% endif %}>Tratamentos</a>
+      <a href="{{ '/problemas/' | relative_url }}" {% if page.url contains '/problemas/' %}aria-current="page"{% endif %}>Preocupações</a>
+      <a href="{{ '/blog/' | relative_url }}" {% if page.url contains '/blog/' %}aria-current="page"{% endif %}>Blog</a>
+      <a href="{{ contact_url }}" {% if page.url contains '/contactos/' %}aria-current="page"{% endif %}>Contactos</a>
+    </nav>
+    <div class="header-socials" aria-label="Redes sociais da Ryca Beauty">
+      <a
+        href="{{ site.data.business.instagram_url }}"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Instagram da Ryca Beauty"
+      >
+        <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8">
+          <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+          <circle cx="12" cy="12" r="4"></circle>
+          <circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"></circle>
+        </svg>
+      </a>
+      <a
+        href="{{ site.data.business.facebook_url }}"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Facebook da Ryca Beauty"
+      >
+        <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+          <path d="M14 8.5V7.2c0-.7.5-1.2 1.2-1.2H17V3h-2.5C12.1 3 11 4.5 11 6.8v1.7H8.5V12H11v9h3v-9h2.6l.4-3.5H14Z"></path>
+        </svg>
+      </a>
+    </div>
+    <a class="button button-small header-cta" href="{{ contact_url }}">Marcar avaliação</a>
+  </div>
+</header>

@@ -1,0 +1,105 @@
+---
+layout: default
+title: Tratamentos
+seo_title: Tratamentos Faciais no Seixal e Almada
+description: Conheça os Tratamentos Faciais e a Depilação a Laser da Ryca Beauty em Seixal e Almada, os seus objetivos e funcionamento.
+permalink: /tratamentos/
+---
+
+<header class="inner-hero compact">
+  <div class="container narrow">
+    {% include breadcrumbs.html %}
+    <p class="eyebrow">Cuidados personalizados</p>
+    <h1>Tratamentos Faciais e Depilação a Laser</h1>
+    <p class="lead">
+      Conheça os cuidados disponíveis na Ryca Beauty em Seixal e Almada e
+      descubra o que distingue cada opção.
+    </p>
+  </div>
+</header>
+
+<section class="section treatments" aria-labelledby="treatments-list-title">
+  <div class="container">
+    <div class="section-heading">
+      <p class="eyebrow">Escolher com informação</p>
+      <h2 id="treatments-list-title">Conheça os tratamentos disponíveis</h2>
+      <p>
+        Conheça os objetivos e o funcionamento de cada tratamento antes de
+        solicitar uma avaliação.
+      </p>
+    </div>
+    <div class="card-grid treatment-grid">
+      {% for item in site.data.treatments %}
+      <article class="service-card">
+        {% assign small_image = item.image | replace: '.webp', '-480.webp' %}
+        <img
+          src="{{ item.image | relative_url }}"
+          srcset="{{ small_image | relative_url }} 480w, {{ item.image | relative_url }} 836w"
+          alt="{{ item.alt }}"
+          width="836"
+          height="471"
+          loading="lazy"
+          sizes="(max-width: 680px) calc(100vw - 40px), (max-width: 900px) 50vw, 33vw"
+        />
+        <div class="card-body">
+          <h3>{{ item.name }}</h3>
+          <p>{{ item.short }}</p>
+          {% if item.concerns %}
+          <p class="concern-label">Pode ajudar a melhorar:</p>
+          <ul class="concern-tags" aria-label="Preocupações relacionadas">
+            {% for concern in item.concerns limit: 3 %}
+            <li>
+              <a
+                href="{{ '/problemas/' | append: concern.slug | append: '/' | relative_url }}"
+                >{{ concern.name }}</a
+              >
+            </li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+          <a
+            class="text-link treatment-card-link"
+            href="{{ '/tratamentos/' | append: item.slug | append: '/' | relative_url }}"
+            >Saber mais <span aria-hidden="true">→</span></a
+          >
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+    {% include treatment-guidance.html %}
+  </div>
+</section>
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "name": "Tratamentos da Ryca Beauty",
+        "description": {{ page.description | jsonify }},
+        "url": {{ page.url | absolute_url | jsonify }},
+        "mainEntity": {
+          "@type": "ItemList",
+          "itemListElement": [
+            {% for item in site.data.treatments %}
+            {
+              "@type": "ListItem",
+              "position": {{ forloop.index }},
+              "name": {{ item.name | jsonify }},
+              "url": {{ '/tratamentos/' | append: item.slug | append: '/' | absolute_url | jsonify }}
+            }{% unless forloop.last %},{% endunless %}
+            {% endfor %}
+          ]
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Início", "item": "https://rycabeauty.com/"},
+          {"@type": "ListItem", "position": 2, "name": "Tratamentos", "item": {{ page.url | absolute_url | jsonify }}}
+        ]
+      }
+    ]
+  }
+</script>
