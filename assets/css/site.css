@@ -178,6 +178,7 @@
 }
 
 /* Ajustes de interação e formulário */
+.contact-form input[type="radio"],.contact-form input[type="checkbox"]{accent-color:var(--gold-dark)}
 .footer-brand{width:max-content;align-items:center}
 .form-honeypot{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
 .contact-form .button[disabled]{cursor:wait;opacity:.66}
