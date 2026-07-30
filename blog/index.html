@@ -6,44 +6,122 @@ description: Artigos da Ryca Beauty sobre cuidados de pele, tratamentos faciais,
 permalink: /blog/
 ---
 
-<header class="inner-hero compact">
+<header class="inner-hero compact blog-hero">
   <div class="container narrow">
     {% include breadcrumbs.html %}
-    <p class="eyebrow">Informação responsável</p>
+    <p class="eyebrow light">Novidades e conhecimento</p>
     <h1>Blog Ryca Beauty</h1>
     <p class="lead">
-      Conteúdos claros sobre cuidados de pele e tratamentos estéticos, sem
-      promessas ou diagnósticos.
+      Um espaço para acompanhar a Ryca Beauty e encontrar informação clara
+      sobre cuidados de pele e tratamentos estéticos.
     </p>
   </div>
 </header>
-<section class="section">
+
+<section class="section blog-index">
   <div class="container">
     {% if site.posts.size > 0 %}
-    <div class="blog-grid">
-      {% for post in site.posts %}
-      <article class="blog-card">
-        {% if post.image %}<img
-          src="{{ post.image }}"
-          alt=""
-          width="600"
-          height="338"
-          loading="lazy"
-        />{% endif %}
-        <p class="eyebrow">
-          {{ post.category }} · {{ post.date | date: "%d/%m/%Y" }}
-        </p>
-        <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-        <p>{{ post.excerpt | strip_html | truncate: 150 }}</p>
+      {% assign featured_post = site.posts.first %}
+      <article class="blog-featured">
+        {% if featured_post.image %}
+        <a
+          class="blog-featured__media"
+          href="{{ featured_post.url | relative_url }}"
+          aria-label="Ler {{ featured_post.title | escape }}"
+        >
+          <picture>
+            {% if featured_post.image_small %}
+            <source
+              media="(max-width: 680px)"
+              srcset="{{ featured_post.image_small | relative_url }}"
+            >
+            {% endif %}
+            <img
+              src="{{ featured_post.image | relative_url }}"
+              alt="{{ featured_post.image_alt | default: featured_post.title | escape }}"
+              width="690"
+              height="801"
+            >
+          </picture>
+        </a>
+        {% endif %}
+        <div class="blog-featured__content">
+          <p class="blog-featured__label">Em destaque</p>
+          <p class="blog-meta">
+            <span>{{ featured_post.category }}</span>
+            <time datetime="{{ featured_post.date | date: '%Y-%m-%d' }}">
+              {{ featured_post.date | date: "%d/%m/%Y" }}
+            </time>
+          </p>
+          <h2>
+            <a href="{{ featured_post.url | relative_url }}">
+              {{ featured_post.title }}
+            </a>
+          </h2>
+          <p class="blog-summary">
+            {{ featured_post.description | default: featured_post.excerpt |
+            strip_html }}
+          </p>
+          <a class="blog-read-link" href="{{ featured_post.url | relative_url }}">
+            Ler artigo <span aria-hidden="true">→</span>
+          </a>
+        </div>
       </article>
-      {% endfor %}
-    </div>
+
+      {% if site.posts.size > 1 %}
+      <div class="blog-list-heading">
+        <div>
+          <p class="eyebrow">Para continuar a ler</p>
+          <h2>Mais artigos</h2>
+        </div>
+        <span>{{ site.posts.size | minus: 1 }} publicações</span>
+      </div>
+
+      <div class="blog-grid">
+        {% for post in site.posts offset: 1 %}
+        <article class="blog-card">
+          {% if post.image %}
+          <a
+            class="blog-card__media"
+            href="{{ post.url | relative_url }}"
+            aria-label="Ler {{ post.title | escape }}"
+          >
+            <img
+              src="{{ post.image_small | default: post.image | relative_url }}"
+              alt="{{ post.image_alt | default: post.title | escape }}"
+              width="600"
+              height="400"
+              loading="lazy"
+            >
+          </a>
+          {% endif %}
+          <div class="blog-card__content">
+            <p class="blog-meta">
+              <span>{{ post.category }}</span>
+              <time datetime="{{ post.date | date: '%Y-%m-%d' }}">
+                {{ post.date | date: "%d/%m/%Y" }}
+              </time>
+            </p>
+            <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+            <p>
+              {{ post.description | default: post.excerpt | strip_html |
+              truncate: 155 }}
+            </p>
+            <a class="blog-read-link" href="{{ post.url | relative_url }}">
+              Ler artigo <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </article>
+        {% endfor %}
+      </div>
+      {% endif %}
     {% else %}
-    <div class="empty-state center">
-      <p>Os primeiros artigos estão a ser preparados.</p>
+    <div class="empty-state blog-empty-state center">
+      <p class="eyebrow">Em preparação</p>
+      <h2>Novos conteúdos estão a caminho</h2>
       <p>
-        Em breve encontrará aqui explicações simples sobre cuidados de pele,
-        tratamentos e dúvidas frequentes.
+        Em breve encontrará aqui novidades da Ryca Beauty e informação simples
+        sobre cuidados de pele e tratamentos.
       </p>
     </div>
     {% endif %}

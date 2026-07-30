@@ -7,7 +7,9 @@ layout: default
   </header>
   <div class="container narrow prose">
     {{ content }}
+    {% unless page.hide_disclaimer %}
     <aside class="technical-note">Conteúdo informativo. O cuidado mais adequado é definido numa avaliação personalizada na Ryca Beauty.</aside>
+    {% endunless %}
     <div class="article-cta"><h2>Quer cuidar da sua pele com acompanhamento?</h2><a class="button" href="{{ '/contactos/' | relative_url }}">Solicitar orientação</a></div>
     <p><a href="{{ '/blog/' | relative_url }}">← Voltar ao blog</a></p>
   </div>
