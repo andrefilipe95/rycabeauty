@@ -1,0 +1,31 @@
+<section
+  class="section location"
+  id="localizacao"
+  aria-labelledby="location-title"
+>
+  <div class="container location-grid">
+    <div>
+      <p class="eyebrow">Onde estamos</p>
+      <h2 id="location-title">Visite a Ryca Beauty em Seixal e Almada</h2>
+      <address>{{ site.data.business.address }}</address>
+      <p><strong>Horário:</strong> {{ site.data.business.schedule }}</p>
+      <p>{{ site.data.business.appointments }}</p>
+      <a
+        class="button button-outline"
+        href="{{ site.data.business.maps_url }}"
+        target="_blank"
+        rel="noopener noreferrer"
+        >Obter direções</a
+      >
+    </div>
+    <div class="map-shell">
+      <iframe
+        src="{{ site.data.business.maps_embed_url }}"
+        title="Mapa da localização da Ryca Beauty"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </div>
+</section>

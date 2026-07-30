@@ -1,0 +1,60 @@
+- slug: acne-e-pele-acneica
+  name: Acne e pele com tendência acneica
+  summary: Borbulhas, pontos negros, oleosidade e marcas podem surgir em diferentes zonas da pele.
+  image: /assets/images/problemas/acne-pele-acneica-v2.webp
+  alt: Retrato com sinais de acne ativa ligeira na testa e na face
+  featured: true
+- slug: manchas-e-hiperpigmentacao
+  name: Manchas e hiperpigmentação
+  summary: As manchas podem criar diferenças de tonalidade e tornar a pele visualmente menos uniforme.
+  image: /assets/images/problemas/manchas-hiperpigmentacao-v2.webp
+  alt: Retrato com alterações de pigmentação visíveis na face
+  featured: true
+- slug: pele-oleosa
+  name: Pele oleosa
+  summary: Brilho excessivo, sensação oleosa e poros mais visíveis podem surgir em diferentes zonas do rosto.
+  image: /assets/images/problemas/pele-oleosa-v2.webp
+  alt: Retrato com brilho natural mais visível na zona T do rosto
+  featured: false
+- slug: pontos-negros-e-poros-obstruidos
+  name: Pontos negros, poros visíveis e obstruídos
+  summary: A acumulação de sebo e células à superfície pode tornar os poros mais visíveis.
+  image: /assets/images/problemas/poros-obstruidos-v2.webp
+  alt: Pormenor da zona do nariz e da face com poros visíveis
+  featured: true
+- slug: pelos-indesejados-e-encravados
+  name: Pelos indesejados e pelos encravados
+  summary: O crescimento frequente do pelo e a irritação causada pela remoção podem provocar desconforto em diferentes zonas.
+  image: /assets/images/problemas/pelos-indesejados-encravados-v2.webp
+  alt: Pormenor de perna com pelo visível e sinais ligeiros de pelos encravados
+  featured: true
+- slug: marcas-de-acne
+  name: Marcas de acne e irregularidades da pele
+  summary: As marcas de acne podem deixar diferenças de cor ou tornar a textura da pele menos uniforme.
+  image: /assets/images/problemas/marcas-acne-v2.webp
+  alt: Retrato com marcas de acne estabilizadas e pequenas irregularidades
+  featured: true
+- slug: textura-irregular
+  name: Textura irregular
+  summary: Aspereza e pequenas irregularidades podem tornar a pele menos uniforme ao olhar e ao toque.
+  image: /assets/images/problemas/textura-irregular-v2.webp
+  alt: Perfil facial com pequenas diferenças de textura na pele
+  featured: false
+- slug: flacidez-facial
+  name: Flacidez facial
+  summary: A perda gradual de firmeza pode tornar-se mais visível no contorno facial, nas bochechas e no pescoço.
+  image: /assets/images/problemas/flacidez-facial-v2.webp
+  alt: Perfil de rosto maduro com o contorno facial e o pescoço visíveis
+  featured: true
+- slug: linhas-finas-e-envelhecimento
+  name: Linhas finas e sinais de envelhecimento
+  summary: Linhas, alterações de textura e menor uniformidade podem tornar-se mais visíveis com o tempo.
+  image: /assets/images/problemas/linhas-finas-envelhecimento-v2.webp
+  alt: Retrato de pele madura com linhas finas naturais junto aos olhos
+  featured: false
+- slug: pele-baca-e-falta-de-luminosidade
+  name: Pele baça e falta de luminosidade
+  summary: Rotina, desidratação e acumulação de células à superfície podem contribuir para uma aparência menos luminosa.
+  image: /assets/images/problemas/pele-baca-luminosidade-v2.webp
+  alt: Retrato com pele de acabamento natural e luminosidade reduzida
+  featured: false

@@ -1,0 +1,39 @@
+---
+layout: default
+---
+<article>
+  <header class="inner-hero compact">
+    <div class="container narrow">{% include breadcrumbs.html %}<p class="eyebrow">{{ page.category }} · {{ page.date | date: "%d/%m/%Y" }}</p><h1>{{ page.title }}</h1><p class="lead">{{ page.description }}</p></div>
+  </header>
+  <div class="container narrow prose">
+    {{ content }}
+    <aside class="technical-note">Conteúdo informativo. O cuidado mais adequado é definido numa avaliação personalizada na Ryca Beauty.</aside>
+    <div class="article-cta"><h2>Quer cuidar da sua pele com acompanhamento?</h2><a class="button" href="{{ '/contactos/' | relative_url }}">Solicitar orientação</a></div>
+    <p><a href="{{ '/blog/' | relative_url }}">← Voltar ao blog</a></p>
+  </div>
+</article>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": {{ page.title | jsonify }},
+      "description": {{ page.description | jsonify }},
+      "datePublished": {{ page.date | date_to_xmlschema | jsonify }},
+      "author": {"@type": "Organization", "name": "Ryca Beauty"},
+      "publisher": {"@id": "https://rycabeauty.com/#business"},
+      "mainEntityOfPage": {{ page.url | absolute_url | jsonify }},
+      "image": {{ page.image | absolute_url | jsonify }}
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Início", "item": "https://rycabeauty.com/"},
+        {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://rycabeauty.com/blog/"},
+        {"@type": "ListItem", "position": 3, "name": {{ page.title | jsonify }}, "item": {{ page.url | absolute_url | jsonify }}}
+      ]
+    }
+  ]
+}
+</script>

@@ -1,0 +1,8 @@
+_site/
+.jekyll-cache/
+.sass-cache/
+vendor/
+.tools/
+.bundle/
+rubyinstaller-*.exe
+_test_artifacts/

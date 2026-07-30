@@ -1,0 +1,51 @@
+{% assign seo_title = page.seo_title | default: page.title | default: site.title
+%} {% assign seo_description = page.description | default: site.description %}
+{% assign canonical_path = page.url | replace: 'index.html', '' %} {% assign
+canonical = canonical_path | absolute_url %} {% assign social_image = page.image
+| default: '/assets/images/logo.jpeg' | absolute_url %}
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>
+  {% if seo_title == site.title %}{{ site.title }} | Estética no Seixal e Almada{% else
+  %}{{ seo_title }} | Ryca Beauty{% endif %}
+</title>
+<meta
+  name="description"
+  content="{{ seo_description | strip_html | normalize_whitespace | escape }}"
+/>
+<meta name="robots" content="{{ page.robots | default: 'index, follow' }}" />
+<meta name="referrer" content="strict-origin-when-cross-origin" />
+<meta
+  http-equiv="Content-Security-Policy"
+  content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self'; img-src 'self' data: https://www.google.com https://maps.gstatic.com; font-src 'self'; frame-src https://www.google.com; connect-src https://formsubmit.co; base-uri 'self'; object-src 'none'; form-action 'self' https://wa.me https://formsubmit.co; upgrade-insecure-requests"
+/>
+<link rel="canonical" href="{{ canonical }}" />
+<link
+  rel="icon"
+  href="{{ '/assets/images/favicon.png' | relative_url }}"
+  type="image/png"
+/>
+<meta property="og:locale" content="pt_PT" />
+<meta property="og:site_name" content="{{ site.title }}" />
+<meta
+  property="og:type"
+  content="{% if page.type == 'article' %}article{% else %}website{% endif %}"
+/>
+<meta property="og:title" content="{{ seo_title | escape }}" />
+<meta
+  property="og:description"
+  content="{{ seo_description | strip_html | normalize_whitespace | escape }}"
+/>
+<meta property="og:url" content="{{ canonical }}" />
+<meta property="og:image" content="{{ social_image }}" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="{{ seo_title | escape }}" />
+<meta
+  name="twitter:description"
+  content="{{ seo_description | strip_html | normalize_whitespace | escape }}"
+/>
+<meta name="twitter:image" content="{{ social_image }}" />
+<link
+  rel="stylesheet"
+  href="{{ '/assets/css/site.css?v=20260730-4' | relative_url }}"
+/>

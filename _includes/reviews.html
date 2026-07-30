@@ -1,0 +1,20 @@
+<section class="section reviews" id="avaliacoes" aria-labelledby="reviews-title">
+  <div class="container narrow center">
+    <p class="eyebrow">Experiências reais</p>
+    <h2 id="reviews-title">Avaliações</h2>
+    {% assign approved_reviews = site.data.reviews | where: "authorized", true %}
+    {% if approved_reviews.size > 0 %}
+      <div class="review-grid">
+        {% for review in approved_reviews %}
+          <figure class="review-card">
+            <blockquote>“{{ review.text }}”</blockquote>
+            <figcaption>{{ review.name }} · {{ review.service }} · {{ review.date | date: "%d/%m/%Y" }}</figcaption>
+          </figure>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p class="empty-state">Em breve poderá conhecer a experiência das clientes da Ryca Beauty.</p>
+    {% endif %}
+  </div>
+</section>
+
