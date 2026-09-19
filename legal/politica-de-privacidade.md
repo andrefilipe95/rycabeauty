@@ -48,7 +48,8 @@ Os dados podem ser tratados pelos seguintes prestadores, apenas na medida necess
 - **WhatsApp/Meta**, quando escolhe contactar através do WhatsApp;
 - **GitHub Pages**, enquanto serviço de alojamento do site;
 - **Google Maps**, quando o mapa incorporado é carregado;
-- **Instagram e Facebook**, apenas quando segue voluntariamente as ligações para essas plataformas.
+- **Instagram/Meta**, quando escolhe carregar um dos vídeos incorporados ou segue voluntariamente uma ligação para essa plataforma;
+- **Facebook/Meta**, apenas quando segue voluntariamente uma ligação para essa plataforma.
 
 Estes prestadores têm políticas de privacidade próprias e alguns podem tratar dados fora do Espaço Económico Europeu, aplicando os mecanismos de transferência previstos nas respetivas políticas.
 
@@ -76,4 +77,4 @@ Tem ainda o direito de apresentar reclamação à [Comissão Nacional de Proteç
 
 Esta política pode ser atualizada quando forem alteradas as funcionalidades do site ou os prestadores utilizados.
 
-Última atualização: 29 de julho de 2026.
+Última atualização: 19 de setembro de 2026.

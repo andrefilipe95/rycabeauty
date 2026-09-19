@@ -136,6 +136,49 @@ document.addEventListener("DOMContentLoaded", () => {
     revealItems.forEach((item) => item.classList.add("is-visible"));
   }
 
+  const updateInstagramFrameHeights = () => {
+    document
+      .querySelectorAll("[data-instagram-reel].is-loaded")
+      .forEach((reel) => {
+        const reelWidth = reel.getBoundingClientRect().width;
+        const reelHeight = reelWidth * (16 / 9);
+        const visibleInstagramContent = reelWidth * 1.19 + 110;
+        const controlsCover = Math.max(
+          0,
+          Math.ceil(reelHeight - visibleInstagramContent),
+        );
+        reel.style.removeProperty("height");
+        reel.style.setProperty(
+          "--instagram-controls-cover",
+          `${controlsCover}px`,
+        );
+      });
+  };
+
+  document.querySelectorAll("[data-instagram-reel]").forEach((reel) => {
+    const loadButton = reel.querySelector("[data-instagram-load]");
+    loadButton?.addEventListener("click", () => {
+      const embedUrl = reel.dataset.instagramEmbed;
+      if (!embedUrl) return;
+
+      const iframe = document.createElement("iframe");
+      iframe.src = embedUrl;
+      iframe.title =
+        reel.dataset.instagramTitle ||
+        "Vídeo publicado no Instagram da Ryca Beauty";
+      iframe.loading = "lazy";
+      iframe.referrerPolicy = "strict-origin-when-cross-origin";
+      iframe.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
+      iframe.allowFullscreen = true;
+      iframe.setAttribute("scrolling", "no");
+      reel.replaceChildren(iframe);
+      reel.classList.add("is-loaded");
+      updateInstagramFrameHeights();
+    });
+  });
+
+  window.addEventListener("resize", updateInstagramFrameHeights);
+
   document.querySelectorAll("[data-before-after]").forEach((comparison) => {
     const range = comparison.querySelector("[data-before-after-range]");
     const updateComparison = () => {
