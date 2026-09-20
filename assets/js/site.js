@@ -38,9 +38,9 @@ document.addEventListener("DOMContentLoaded", () => {
     node.textContent = String(new Date().getFullYear());
   });
 
-  const revealItems = document.querySelectorAll(
+  const revealItems = [...document.querySelectorAll(
     ".section-heading, .service-card, .concern-card, .comparison-card, .instagram-reel, .about-grid > *, .contact-heading, .contact-location, .contact-form, .faq details, .testimonial-card, .empty-state"
-  );
+  )];
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const progressBar = document.querySelector("[data-scroll-progress]");
   const backToTop = document.querySelector("[data-back-to-top]");
@@ -120,6 +120,34 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (!reduceMotion && "IntersectionObserver" in window) {
     document.documentElement.classList.add("reveal-enabled");
+    const setRevealOrder = () => {
+      const groups = new Map();
+
+      revealItems.forEach((item) => {
+        const group = item.closest("section") || item.parentElement;
+        if (!groups.has(group)) groups.set(group, []);
+        groups.get(group).push(item);
+      });
+
+      groups.forEach((items) => {
+        items
+          .map((item) => ({ item, rect: item.getBoundingClientRect() }))
+          .sort((first, second) => {
+            const verticalDistance = first.rect.top - second.rect.top;
+            if (Math.abs(verticalDistance) > 12) return verticalDistance;
+            return first.rect.left - second.rect.left;
+          })
+          .forEach(({ item }, index) => {
+            const delay = Math.min(index * 70, 420);
+            item.style.setProperty("--reveal-delay", `${delay}ms`);
+          });
+      });
+    };
+
+    setRevealOrder();
+    window.addEventListener("load", setRevealOrder, { once: true });
+    window.addEventListener("resize", setRevealOrder);
+
     const revealObserver = new IntersectionObserver((entries, observer) => {
       entries.forEach((entry) => {
         if (!entry.isIntersecting) return;
@@ -128,8 +156,8 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }, { threshold: 0.14, rootMargin: "0px 0px -40px" });
 
-    revealItems.forEach((item, index) => {
-      item.classList.add("reveal-on-scroll", `reveal-delay-${index % 4}`);
+    revealItems.forEach((item) => {
+      item.classList.add("reveal-on-scroll");
       revealObserver.observe(item);
     });
   } else {
