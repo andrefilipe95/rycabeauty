@@ -32,6 +32,18 @@ webp(
 )
 webp("images/erica.png", "assets/images/erica-ryca-beauty.webp", 690, 82)
 webp("images/erica.png", "assets/images/erica-ryca-beauty-480.webp", 480, 80)
+webp(
+    "images/erica-sobre.png",
+    "assets/images/erica-sobre-ryca-beauty.webp",
+    1100,
+    82,
+)
+webp(
+    "images/erica-sobre.png",
+    "assets/images/erica-sobre-ryca-beauty-480.webp",
+    480,
+    80,
+)
 
 for source, name in [
     ("limpeza.png", "limpeza-pele-profunda-seixal.webp"),
