@@ -30,6 +30,36 @@ webp(
     960,
     80,
 )
+webp(
+    "images/hero-erica-ryca-beauty.png",
+    "assets/images/hero-erica-ryca-beauty.webp",
+    2560,
+    88,
+)
+webp(
+    "images/hero-erica-ryca-beauty.png",
+    "assets/images/hero-erica-ryca-beauty-1600.webp",
+    1600,
+    86,
+)
+webp(
+    "images/hero-erica-ryca-beauty.png",
+    "assets/images/hero-erica-ryca-beauty-960.webp",
+    960,
+    82,
+)
+webp(
+    "images/hero-erica-ryca-beauty-mobile.png",
+    "assets/images/hero-erica-ryca-beauty-mobile.webp",
+    941,
+    82,
+)
+webp(
+    "images/hero-erica-ryca-beauty-mobile.png",
+    "assets/images/hero-erica-ryca-beauty-mobile-600.webp",
+    600,
+    80,
+)
 webp("images/erica.png", "assets/images/erica-ryca-beauty.webp", 690, 82)
 webp("images/erica.png", "assets/images/erica-ryca-beauty-480.webp", 480, 80)
 webp(
