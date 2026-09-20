@@ -6,4 +6,7 @@
 #   service: "Limpeza de Pele Profunda"
 #   text: "Texto autorizado pela cliente."
 #   authorized: false
-[]
+- name: "André N."
+  service: "Limpeza de Pele Profunda"
+  text: "Fiz uma limpeza de pele com a Sra. Érica e correu tudo muito bem. Recomendo e voltarei 🙏"
+  authorized: true

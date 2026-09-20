@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   const revealItems = [...document.querySelectorAll(
-    ".section-heading, .service-card, .concern-card, .comparison-card, .instagram-reel, .about-grid > *, .contact-heading, .contact-location, .contact-form, .faq details, .testimonial-card, .empty-state"
+    ".section-heading, .service-card, .concern-card, .comparison-card, .instagram-reel, .about-grid > *, .contact-heading, .contact-location, .contact-form, .faq details, .google-rating-card, .testimonial-card, .testimonial-note, .empty-state"
   )];
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const progressBar = document.querySelector("[data-scroll-progress]");

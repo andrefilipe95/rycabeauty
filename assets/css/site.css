@@ -392,6 +392,24 @@
   .back-to-top{transform:none}
 }
 
+.google-rating-card{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"source action" "score action" "note action";gap:.45rem 2rem;align-items:center;margin-top:2.5rem;padding:clamp(1.6rem,4vw,2.4rem);border:1px solid rgba(155,117,65,.25);background:linear-gradient(135deg,#f7efe3,#fffdf9);box-shadow:0 18px 46px rgba(60,36,24,.1);text-align:left}
+.google-rating-card__source{grid-area:source;display:flex;align-items:center;gap:.7rem;color:var(--muted);font-size:.78rem;font-weight:750;letter-spacing:.1em;text-transform:uppercase}
+.google-rating-card__mark{display:grid;width:34px;height:34px;place-items:center;border:1px solid var(--border);border-radius:50%;background:#fff;color:#4285f4;font:700 1rem Arial,sans-serif;box-shadow:0 5px 16px rgba(43,26,18,.08)}
+.google-rating-card__score{grid-area:score;display:flex;flex-wrap:wrap;align-items:center;gap:.85rem}
+.google-rating-card__score strong{font:500 clamp(2.4rem,6vw,3.8rem)/1 var(--serif)}
+.google-rating-card__stars{color:var(--gold-dark);font-size:1.15rem;letter-spacing:.12em}
+.google-rating-card>p{grid-area:note;margin:0;color:var(--muted);font-size:.86rem}
+.google-rating-card>p small{display:block;margin-top:.15rem}
+.google-rating-card>.button{grid-area:action;min-width:210px}
+.testimonial-list-title{margin-top:3.5rem}
+.testimonial-note{margin:1.5rem 0 0;color:var(--muted);font-size:.92rem}
+
+@media(max-width:600px){
+  .google-rating-card{grid-template-columns:1fr;grid-template-areas:"source" "score" "note" "action";gap:.8rem;text-align:center}
+  .google-rating-card__source,.google-rating-card__score{justify-content:center}
+  .google-rating-card>.button{width:100%;margin-top:.55rem}
+}
+
 @media(min-width:681px){
   .contact-layout{align-items:stretch}
   .contact-form{height:100%}

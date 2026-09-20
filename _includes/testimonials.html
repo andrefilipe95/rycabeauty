@@ -10,8 +10,40 @@
       Cada experiência é única. Aqui poderá conhecer a opinião de clientes que
       confiaram na Ryca Beauty para cuidar da sua pele.
     </p>
+    <div class="google-rating-card">
+      <div class="google-rating-card__source">
+        <span class="google-rating-card__mark" aria-hidden="true">G</span>
+        <span>Avaliações no Google</span>
+      </div>
+      <div class="google-rating-card__score">
+        <strong>{{ site.data.business.google_rating }}</strong>
+        <span
+          class="google-rating-card__stars"
+          role="img"
+          aria-label="5 em 5 estrelas"
+          >★★★★★</span
+        >
+      </div>
+      <p>
+        Com base em {{ site.data.business.google_review_count }} {% if
+        site.data.business.google_review_count == 1 %}avaliação pública{% else
+        %}avaliações públicas{% endif %}.
+        <small
+          >Dados consultados em {{ site.data.business.google_rating_updated
+          }}.</small
+        >
+      </p>
+      <a
+        class="button button-outline"
+        href="{{ site.data.business.maps_url }}"
+        target="_blank"
+        rel="noopener noreferrer"
+        >Ver avaliações no Google</a
+      >
+    </div>
     {% assign authorized_testimonials = site.data.testimonials | where:
     "authorized", true %} {% if authorized_testimonials.size > 0 %}
+    <h3 class="testimonial-list-title">Testemunhos de clientes</h3>
     <div class="testimonial-grid">
       {% for testimonial in authorized_testimonials %}
       <figure class="testimonial-card">
@@ -26,9 +58,9 @@
       {% endfor %}
     </div>
     {% else %}
-    <p class="empty-state">
-      Em breve poderá conhecer experiências partilhadas por clientes da Ryca
-      Beauty.
+    <p class="testimonial-note">
+      Os testemunhos autorizados pelas clientes serão apresentados aqui à
+      medida que forem recebidos.
     </p>
     {% endif %}
   </div>
