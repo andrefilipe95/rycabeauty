@@ -15,6 +15,7 @@
       <a href="{{ '/' | relative_url }}" {% if page.url == '/' %}aria-current="page"{% endif %}>Início</a>
       <a href="{{ '/tratamentos/' | relative_url }}" {% if page.url contains '/tratamentos/' %}aria-current="page"{% endif %}>Tratamentos</a>
       <a href="{{ '/problemas/' | relative_url }}" {% if page.url contains '/problemas/' %}aria-current="page"{% endif %}>Preocupações</a>
+      <a href="{{ '/sobre/' | relative_url }}" {% if page.url contains '/sobre/' %}aria-current="page"{% endif %}>Sobre</a>
       <a href="{{ '/blog/' | relative_url }}" {% if page.url contains '/blog/' %}aria-current="page"{% endif %}>Blog</a>
       <a href="{{ contact_url }}" {% if page.url contains '/contactos/' %}aria-current="page"{% endif %}>Contactos</a>
     </nav>

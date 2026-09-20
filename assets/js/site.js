@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   const revealItems = document.querySelectorAll(
-    ".section-heading, .service-card, .concern-card, .comparison-card, .gallery-item, .about-grid > *, .location-grid > *, .contact-grid > *, .faq details, .testimonial-card, .empty-state"
+    ".section-heading, .service-card, .concern-card, .comparison-card, .instagram-reel, .about-grid > *, .contact-heading, .contact-location, .contact-form, .faq details, .testimonial-card, .empty-state"
   );
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const progressBar = document.querySelector("[data-scroll-progress]");
@@ -188,84 +188,6 @@ document.addEventListener("DOMContentLoaded", () => {
     };
     range?.addEventListener("input", updateComparison);
     if (range) updateComparison();
-  });
-
-  const lightbox = document.querySelector("[data-gallery-lightbox]");
-  const lightboxImage = lightbox?.querySelector("[data-gallery-lightbox-image]");
-  const lightboxPrevious = lightbox?.querySelector("[data-gallery-previous]");
-  const lightboxNext = lightbox?.querySelector("[data-gallery-next]");
-  const lightboxStage = lightbox?.querySelector(".gallery-lightbox-stage");
-  const galleryItems = [...document.querySelectorAll("[data-gallery-image]")];
-  let galleryTrigger = null;
-  let currentGalleryIndex = 0;
-  let touchStartX = 0;
-  let touchStartY = 0;
-
-  const showGalleryImage = (index) => {
-    if (!lightboxImage || galleryItems.length === 0) return;
-    currentGalleryIndex = (index + galleryItems.length) % galleryItems.length;
-    const item = galleryItems[currentGalleryIndex];
-    lightboxImage.src = item.dataset.galleryImage;
-    lightboxImage.alt = item.dataset.galleryAlt || "Imagem da galeria Ryca Beauty";
-  };
-
-  const moveGallery = (direction) => {
-    showGalleryImage(currentGalleryIndex + direction);
-  };
-
-  const closeGallery = () => {
-    if (!lightbox || !lightboxImage) return;
-    lightbox.classList.remove("open");
-    lightbox.setAttribute("aria-hidden", "true");
-    lightboxImage.src = "";
-    lightboxImage.alt = "";
-    document.body.classList.remove("modal-open");
-    galleryTrigger?.focus();
-  };
-
-  galleryItems.forEach((item, index) => {
-    item.addEventListener("click", () => {
-      if (!lightbox || !lightboxImage) return;
-      galleryTrigger = item;
-      showGalleryImage(index);
-      lightbox.classList.add("open");
-      lightbox.setAttribute("aria-hidden", "false");
-      document.body.classList.add("modal-open");
-      lightbox.querySelector(".gallery-lightbox-dialog")?.focus();
-    });
-  });
-
-  if (galleryItems.length < 2) {
-    if (lightboxPrevious) lightboxPrevious.hidden = true;
-    if (lightboxNext) lightboxNext.hidden = true;
-  }
-  lightboxPrevious?.addEventListener("click", () => moveGallery(-1));
-  lightboxNext?.addEventListener("click", () => moveGallery(1));
-
-  lightboxStage?.addEventListener("touchstart", (event) => {
-    const touch = event.changedTouches[0];
-    touchStartX = touch.clientX;
-    touchStartY = touch.clientY;
-  }, { passive: true });
-  lightboxStage?.addEventListener("touchend", (event) => {
-    const touch = event.changedTouches[0];
-    const movementX = touch.clientX - touchStartX;
-    const movementY = touch.clientY - touchStartY;
-    if (Math.abs(movementX) < 45 || Math.abs(movementX) <= Math.abs(movementY)) return;
-    moveGallery(movementX < 0 ? 1 : -1);
-  }, { passive: true });
-  lightboxStage?.addEventListener("click", (event) => {
-    if (event.target === lightboxStage) closeGallery();
-  });
-
-  lightbox?.querySelectorAll("[data-gallery-close]").forEach((button) => {
-    button.addEventListener("click", closeGallery);
-  });
-  document.addEventListener("keydown", (event) => {
-    if (!lightbox?.classList.contains("open")) return;
-    if (event.key === "Escape") closeGallery();
-    if (event.key === "ArrowLeft") moveGallery(-1);
-    if (event.key === "ArrowRight") moveGallery(1);
   });
 
   const form = document.getElementById("contact-form");

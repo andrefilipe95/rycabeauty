@@ -175,19 +175,9 @@ expect(
   "WhatsApp: botão não está no canto inferior direito",
 );
 
-await page.locator("[data-gallery-image]").first().click();
 expect(
-  (await page
-    .locator("[data-gallery-lightbox]")
-    .getAttribute("aria-hidden")) === "false",
-  "galeria: imagem não abriu",
-);
-await page.getByRole("button", { name: "Fechar imagem" }).click();
-expect(
-  (await page
-    .locator("[data-gallery-lightbox]")
-    .getAttribute("aria-hidden")) === "true",
-  "galeria: imagem não fechou",
+  (await page.locator("[data-instagram-reel]").count()) === 3,
+  "galeria: devem existir três vídeos do Instagram",
 );
 
 await page.getByLabel("Nome *").fill("Teste Local");

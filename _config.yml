@@ -29,7 +29,8 @@ defaults:
       layout: default
       image: /assets/images/logo.jpeg
   - scope:
-      path: "_posts"
+      path: ""
+      type: posts
     values:
       layout: post
       type: article

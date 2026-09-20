@@ -130,7 +130,7 @@ for marker in required_home:
     if marker not in homepage:
         errors.append(f"homepage: falta {marker}")
 
-for marker in ("encodeURIComponent", "mailto:", "data-before-after", "data-gallery-image", "form.checkValidity"):
+for marker in ("encodeURIComponent", "mailto:", "data-before-after", "data-instagram-reel", "form.checkValidity"):
     if marker not in js:
         errors.append(f"JavaScript: falta {marker}")
 
@@ -153,6 +153,7 @@ for route in [
     "/tratamentos/limpeza-de-pele-seixal/",
     "/tratamentos/depilacao-a-laser-seixal/",
     "/problemas/acne-e-pele-acneica/",
+    "/sobre/",
     "/blog/",
     "/legal/politica-de-privacidade/",
 ]:

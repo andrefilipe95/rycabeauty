@@ -1,4 +1,5 @@
 ---
+layout: post
 title: A história da Ryca Beauty em destaque na New in Seixal
 seo_title: Ryca Beauty em destaque na New in Seixal
 description: A New in Seixal deu a conhecer a história de Érica Ribeiro, o percurso que levou à criação da Ryca Beauty e a sua abordagem aos cuidados de pele.
