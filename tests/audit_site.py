@@ -119,7 +119,7 @@ required_home = [
     'id="problemas"',
     'id="resultados"',
     'id="galeria"',
-    'id="avaliacoes"',
+    'id="testemunhos"',
     'id="localizacao"',
     'id="contactos"',
     'id="perguntas"',
@@ -130,7 +130,7 @@ for marker in required_home:
     if marker not in homepage:
         errors.append(f"homepage: falta {marker}")
 
-for marker in ("encodeURIComponent", "mailto:", "data-before-after", "data-instagram-reel", "form.checkValidity"):
+for marker in ("encodeURIComponent", "fetch(", "data-before-after", "data-instagram-reel", "form.checkValidity"):
     if marker not in js:
         errors.append(f"JavaScript: falta {marker}")
 

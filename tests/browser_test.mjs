@@ -138,7 +138,7 @@ expect(
 );
 
 const comparison = page.locator("[data-before-after]");
-await comparison.scrollIntoViewIfNeeded();
+await comparison.first().scrollIntoViewIfNeeded();
 expect(
   (await comparison.count()) === 3,
   "comparador: devem existir três exemplos",

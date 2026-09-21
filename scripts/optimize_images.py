@@ -19,18 +19,6 @@ def webp(source: str, destination: str, width: int, quality: int = 80) -> None:
 
 
 webp(
-    "assets/images/hero-ryca-beauty-seixal2.png",
-    "assets/images/hero-ryca-beauty-seixal2.webp",
-    1600,
-    82,
-)
-webp(
-    "assets/images/hero-ryca-beauty-seixal2.png",
-    "assets/images/hero-ryca-beauty-seixal2-960.webp",
-    960,
-    80,
-)
-webp(
     "images/hero-erica-ryca-beauty.png",
     "assets/images/hero-erica-ryca-beauty.webp",
     2560,
@@ -114,17 +102,9 @@ for name in [
     "linhas-finas-envelhecimento-v2",
     "pele-baca-luminosidade-v2",
 ]:
-    source = f"assets/images/problemas/{name}.png"
+    source = f"images/problemas/{name}.png"
     webp(source, f"assets/images/problemas/{name}.webp", 836, 80)
     webp(source, f"assets/images/problemas/{name}-480.webp", 480, 78)
-
-for source, name in [
-    ("andre-depois.jpeg", "resultado-tratamento-andre.webp"),
-    ("edite-depois.jpeg", "resultado-tratamento-edite.webp"),
-    ("depois.jpeg", "resultado-cuidado-estetico.webp"),
-    ("produtos.jpeg", "produtos-ryca-beauty.webp"),
-]:
-    webp(f"images/galeria/{source}", f"assets/images/galeria/{name}", 900, 80)
 
 favicon = ROOT / "assets/images/favicon.png"
 favicon.parent.mkdir(parents=True, exist_ok=True)
