@@ -62,18 +62,30 @@ layout: default
     </div>
     <aside class="article-aside">
       {% assign small_image = page.image | replace: '.webp', '-480.webp' %}
-      <img
-        src="{{ page.image | relative_url }}?v={{ site.problem_images_version }}"
-        srcset="{{ small_image | relative_url }}?v={{ site.problem_images_version }} 480w, {{ page.image | relative_url }}?v={{ site.problem_images_version }} 836w"
-        sizes="(max-width: 900px) calc(100vw - 40px), 320px"
-        alt="{{ page.image_alt }}"
-        width="836"
-        height="471"
-        loading="eager"
-      />
+      {% assign large_image = page.image | replace: '.webp', '-1600.webp' %}
+      <button
+        class="concern-image-trigger concern-image-trigger--detail"
+        type="button"
+        data-lightbox-open
+        data-lightbox-src="{{ large_image | relative_url }}?v={{ site.problem_images_version }}"
+        data-lightbox-alt="{{ page.image_alt }}"
+        aria-label="Ampliar imagem: {{ page.title }}"
+      >
+        <img
+          src="{{ page.image | relative_url }}?v={{ site.problem_images_version }}"
+          srcset="{{ small_image | relative_url }}?v={{ site.problem_images_version }} 480w, {{ page.image | relative_url }}?v={{ site.problem_images_version }} 836w"
+          sizes="(max-width: 900px) calc(100vw - 40px), 320px"
+          alt="{{ page.image_alt }}"
+          width="836"
+          height="471"
+          loading="eager"
+        />
+      </button>
+      <p class="image-zoom-hint">Clique na fotografia para ampliar</p>
     </aside>
   </div>
 </article>
+{% include image-lightbox.html %}
 <script type="application/ld+json">
   {
     "@context": "https://schema.org",

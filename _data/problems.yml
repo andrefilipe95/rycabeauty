@@ -29,7 +29,7 @@
   alt: Retrato com marcas de acne estabilizadas e pequenas irregularidades
   featured: true
 - slug: excesso-de-penugem
-  name: Excesso de Penugem
+  name: Excesso de penugem
   summary: A penugem facial mais visível pode alterar a suavidade aparente da pele e o acabamento da maquilhagem.
   image: /assets/images/problemas/excesso-penugem-v2.webp
   alt: Perfil facial com penugem fina visível na zona da face
@@ -58,8 +58,8 @@
   image: /assets/images/problemas/linhas-finas-envelhecimento-v2.webp
   alt: Retrato de pele madura com linhas e sinais de envelhecimento visíveis
   featured: false
-- slug: pele-baca-e-falta-de-luminosidade
-  name: Pele baça e falta de luminosidade
+- slug: pele-seca-e-desidratada
+  name: Pele seca e desidratada
   summary: Rotina, desidratação e acumulação de células à superfície podem contribuir para uma aparência menos luminosa.
   image: /assets/images/problemas/pele-baca-luminosidade-v2.webp
   alt: Retrato com pele de acabamento natural e luminosidade reduzida

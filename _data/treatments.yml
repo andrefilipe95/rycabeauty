@@ -40,13 +40,13 @@
       name: Excesso de penugem
     - slug: textura-irregular
       name: Textura irregular
-    - slug: pele-baca-e-falta-de-luminosidade
-      name: Pele baça
-- slug: peeling-facial-seixal
-  name: Peeling Facial
+    - slug: pele-seca-e-desidratada
+      name: Pele seca e desidratada
+- slug: peeling-rose-de-mer-seixal
+  name: Peeling Rose De Mer
   short: Renovação superficial com intensidade ajustada ao objetivo e à sensibilidade da pele.
-  image: /assets/images/tratamentos/peeling-facial-seixal.webp
-  alt: Aplicação profissional de peeling facial
+  image: /assets/images/tratamentos/peeling-rose-de-mer-seixal.webp
+  alt: Aplicação profissional do Peeling Rose De Mer
   concerns:
     - slug: manchas-e-hiperpigmentacao
       name: Manchas

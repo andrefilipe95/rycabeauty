@@ -10,7 +10,7 @@ image_alt: Pormenor da zona do nariz e da face com poros visíveis
 intro: A aparência dos poros e a presença de pontos negros variam com a oleosidade, a rotina e as características da pele.
 related_treatments:
   - limpeza-de-pele-seixal
-  - peeling-facial-seixal
+  - peeling-rose-de-mer-seixal
 faq:
   - question: Devo extrair pontos negros em casa?
     answer: A manipulação inadequada pode irritar ou lesionar a pele. Procure orientação profissional.

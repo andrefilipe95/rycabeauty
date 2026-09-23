@@ -10,7 +10,7 @@ image_alt: Retrato com sinais de acne ativa ligeira na testa e na face
 intro: Borbulhas, pontos negros, oleosidade e marcas podem apresentar-se de formas diferentes. Observar o estado atual da pele ajuda a selecionar os cuidados mais adequados.
 related_treatments:
   - limpeza-de-pele-seixal
-  - peeling-facial-seixal
+  - peeling-rose-de-mer-seixal
 faq:
   - question: Uma limpeza de pele trata a acne?
     answer: A limpeza de pele não cura a acne, mas pode ajudar na higienização e na desobstrução dos poros quando for adequada ao estado da pele.

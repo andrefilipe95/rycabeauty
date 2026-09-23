@@ -11,7 +11,7 @@ intro: Linhas finas, alterações de textura e menor uniformidade podem tornar-s
 related_treatments:
   - hifu-facial-seixal
   - microagulhamento-seixal
-  - peeling-facial-seixal
+  - peeling-rose-de-mer-seixal
 faq:
   - question: É possível eliminar todos os sinais de envelhecimento?
     answer: Os tratamentos não eliminam o processo natural de envelhecimento, mas podem ajudar a melhorar a aparência de linhas finas, textura, luminosidade ou firmeza.

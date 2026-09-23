@@ -10,7 +10,7 @@ image_alt: Retrato com brilho natural mais visível na zona T do rosto
 intro: A produção de sebo varia entre pessoas e pode mudar com a rotina, ambiente e outros fatores.
 related_treatments:
   - limpeza-de-pele-seixal
-  - peeling-facial-seixal
+  - peeling-rose-de-mer-seixal
 faq:
   - question: Devo lavar a pele oleosa muitas vezes?
     answer: Lavar a pele demasiadas vezes ou utilizar produtos agressivos pode aumentar a irritação. O mais importante é manter uma rotina equilibrada e adaptada à pele.

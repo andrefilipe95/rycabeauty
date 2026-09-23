@@ -10,7 +10,7 @@ image_alt: Retrato com marcas de acne estabilizadas e pequenas irregularidades
 intro: As marcas deixadas pela inflamação podem apresentar alterações de pigmentação, textura ou uma combinação de ambas.
 related_treatments:
   - microagulhamento-seixal
-  - peeling-facial-seixal
+  - peeling-rose-de-mer-seixal
 faq:
   - question: Marcas de acne e acne ativa são a mesma preocupação?
     answer: Não. A pele com inflamação ativa e as marcas que permanecem depois exigem observações e cuidados diferentes.

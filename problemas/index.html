@@ -35,15 +35,25 @@ permalink: /problemas/
       {% for item in site.data.problems %}
       <article class="concern-card service-card">
         {% assign small_image = item.image | replace: '.webp', '-480.webp' %}
-        <img
-          src="{{ item.image | relative_url }}?v={{ site.problem_images_version }}"
-          srcset="{{ small_image | relative_url }}?v={{ site.problem_images_version }} 480w, {{ item.image | relative_url }}?v={{ site.problem_images_version }} 836w"
-          alt="{{ item.alt }}"
-          width="836"
-          height="471"
-          loading="lazy"
-          sizes="(max-width: 680px) calc(100vw - 40px), (max-width: 900px) 50vw, 50vw"
-        />
+        {% assign large_image = item.image | replace: '.webp', '-1600.webp' %}
+        <button
+          class="concern-image-trigger"
+          type="button"
+          data-lightbox-open
+          data-lightbox-src="{{ large_image | relative_url }}?v={{ site.problem_images_version }}"
+          data-lightbox-alt="{{ item.alt }}"
+          aria-label="Ampliar imagem: {{ item.name }}"
+        >
+          <img
+            src="{{ item.image | relative_url }}?v={{ site.problem_images_version }}"
+            srcset="{{ small_image | relative_url }}?v={{ site.problem_images_version }} 480w, {{ item.image | relative_url }}?v={{ site.problem_images_version }} 836w"
+            alt="{{ item.alt }}"
+            width="836"
+            height="471"
+            loading="lazy"
+            sizes="(max-width: 680px) calc(100vw - 40px), (max-width: 900px) 50vw, 50vw"
+          />
+        </button>
         <div class="card-body">
           <h3>{{ item.name }}</h3>
           <p>{{ item.summary }}</p>
@@ -60,6 +70,8 @@ permalink: /problemas/
     {% include problem-guidance.html %}
   </div>
 </section>
+
+{% include image-lightbox.html %}
 
 <script type="application/ld+json">
   {

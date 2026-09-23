@@ -68,7 +68,7 @@ for source, name in [
     ("laser.png", "depilacao-laser-seixal.webp"),
     ("microagulhamento.png", "microagulhamento-seixal.webp"),
     ("dermaplaning.png", "dermaplaning-seixal.webp"),
-    ("peeling.png", "peeling-facial-seixal.webp"),
+    ("peeling-rose-de-mer.png", "peeling-rose-de-mer-seixal.webp"),
     ("hifu.png", "hifu-facial-seixal.webp"),
 ]:
     webp(f"images/tratamentos/{source}", f"assets/images/tratamentos/{name}", 836, 80)
@@ -104,6 +104,7 @@ for name in [
     "pele-baca-luminosidade-v2",
 ]:
     source = f"images/problemas/{name}.png"
+    webp(source, f"assets/images/problemas/{name}-1600.webp", 1600, 88)
     webp(source, f"assets/images/problemas/{name}.webp", 836, 80)
     webp(source, f"assets/images/problemas/{name}-480.webp", 480, 78)
 

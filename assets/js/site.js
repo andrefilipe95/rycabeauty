@@ -164,6 +164,42 @@ document.addEventListener("DOMContentLoaded", () => {
     revealItems.forEach((item) => item.classList.add("is-visible"));
   }
 
+  const imageLightbox = document.querySelector("[data-image-lightbox]");
+  const lightboxImage = imageLightbox?.querySelector("[data-image-lightbox-image]");
+  const lightboxCloseButton = imageLightbox?.querySelector(
+    ".image-lightbox__close",
+  );
+  let lightboxTrigger = null;
+
+  const closeImageLightbox = () => {
+    if (!imageLightbox || imageLightbox.hidden) return;
+    imageLightbox.hidden = true;
+    document.body.classList.remove("image-lightbox-open");
+    lightboxImage?.removeAttribute("src");
+    lightboxImage?.setAttribute("alt", "");
+    lightboxTrigger?.focus();
+    lightboxTrigger = null;
+  };
+
+  document.querySelectorAll("[data-lightbox-open]").forEach((trigger) => {
+    trigger.addEventListener("click", () => {
+      if (!imageLightbox || !lightboxImage || !trigger.dataset.lightboxSrc) return;
+      lightboxTrigger = trigger;
+      lightboxImage.src = trigger.dataset.lightboxSrc;
+      lightboxImage.alt = trigger.dataset.lightboxAlt || "Imagem ampliada";
+      imageLightbox.hidden = false;
+      document.body.classList.add("image-lightbox-open");
+      lightboxCloseButton?.focus();
+    });
+  });
+
+  imageLightbox
+    ?.querySelectorAll("[data-image-lightbox-close]")
+    .forEach((control) => control.addEventListener("click", closeImageLightbox));
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeImageLightbox();
+  });
+
   const updateInstagramFrameHeights = () => {
     document
       .querySelectorAll("[data-instagram-reel].is-loaded")

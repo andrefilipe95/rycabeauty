@@ -1,6 +1,6 @@
 ---
 layout: problem
-title: Excesso de Penugem
+title: Excesso de penugem
 seo_title: Excesso de Penugem Facial
 description: Conheça o excesso de penugem facial e saiba como o dermaplaning pode remover delicadamente os pelos finos à superfície da pele.
 section_name: Preocupações

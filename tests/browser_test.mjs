@@ -122,6 +122,52 @@ expect(
   (await page.locator(".concern-card .text-link").count()) === 6,
   "preocupações: cada caixa deve ter uma ligação Saber mais",
 );
+expect(
+  (await page.locator("[data-lightbox-open]").count()) === 6,
+  "preocupações: cada imagem deve abrir o visualizador",
+);
+await page.locator("[data-lightbox-open]").first().click();
+expect(
+  await page.locator("[data-image-lightbox]").isVisible(),
+  "visualizador: não abriu ao clicar na imagem",
+);
+await page.keyboard.press("Escape");
+expect(
+  await page.locator("[data-image-lightbox]").isHidden(),
+  "visualizador: não fechou com Escape",
+);
+await page.locator("[data-lightbox-open]").first().click();
+await page.locator(".image-lightbox__backdrop").click({ position: { x: 5, y: 5 } });
+expect(
+  await page.locator("[data-image-lightbox]").isHidden(),
+  "visualizador: não fechou ao clicar fora da imagem",
+);
+await page.locator("[data-lightbox-open]").first().click();
+await page.locator(".image-lightbox__close").click();
+expect(
+  await page.locator("[data-image-lightbox]").isHidden(),
+  "visualizador: não fechou no botão X",
+);
+
+const problemPage = await context.newPage();
+await problemPage.goto(`${base}/problemas/marcas-de-acne/`, {
+  waitUntil: "domcontentloaded",
+});
+expect(
+  (await problemPage.locator("[data-lightbox-open]").count()) === 1,
+  "página da preocupação: a fotografia não abre o visualizador",
+);
+expect(
+  await problemPage.getByText("Clique na fotografia para ampliar").isVisible(),
+  "página da preocupação: falta a indicação para ampliar",
+);
+await problemPage.locator("[data-lightbox-open]").click();
+expect(
+  await problemPage.locator("[data-image-lightbox]").isVisible(),
+  "página da preocupação: o visualizador não abriu",
+);
+await problemPage.locator(".image-lightbox__close").click();
+await problemPage.close();
 
 expect(
   (await page.locator(".map-shell iframe").count()) === 1,

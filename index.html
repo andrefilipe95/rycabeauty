@@ -149,15 +149,25 @@ permalink: /
       {% for item in site.data.problems %} {% if item.featured %}
       <article class="concern-card service-card">
         {% assign small_image = item.image | replace: '.webp', '-480.webp' %}
-        <img
-          src="{{ item.image }}?v={{ site.problem_images_version }}"
-          srcset="{{ small_image }}?v={{ site.problem_images_version }} 480w, {{ item.image }}?v={{ site.problem_images_version }} 836w"
-          alt="{{ item.alt }}"
-          width="836"
-          height="471"
-          loading="lazy"
-          sizes="(max-width: 680px) calc(100vw - 40px), (max-width: 900px) 50vw, 33vw"
-        />
+        {% assign large_image = item.image | replace: '.webp', '-1600.webp' %}
+        <button
+          class="concern-image-trigger"
+          type="button"
+          data-lightbox-open
+          data-lightbox-src="{{ large_image }}?v={{ site.problem_images_version }}"
+          data-lightbox-alt="{{ item.alt }}"
+          aria-label="Ampliar imagem: {{ item.name }}"
+        >
+          <img
+            src="{{ item.image }}?v={{ site.problem_images_version }}"
+            srcset="{{ small_image }}?v={{ site.problem_images_version }} 480w, {{ item.image }}?v={{ site.problem_images_version }} 836w"
+            alt="{{ item.alt }}"
+            width="836"
+            height="471"
+            loading="lazy"
+            sizes="(max-width: 680px) calc(100vw - 40px), (max-width: 900px) 50vw, 33vw"
+          />
+        </button>
         <div class="card-body">
           <h3>{{ item.name }}</h3>
           <p>{{ item.summary }}</p>
@@ -175,6 +185,8 @@ permalink: /
     </div>
   </div>
 </section>
+
+{% include image-lightbox.html %}
 
 <section class="section results" id="resultados">
   <div class="container">

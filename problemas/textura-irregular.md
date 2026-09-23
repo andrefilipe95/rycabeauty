@@ -10,7 +10,7 @@ image_alt: Perfil facial com pequenas diferenças de textura na pele
 intro: Aspereza e pequenas irregularidades visuais ou ao toque podem ter diferentes causas e responder de formas distintas aos cuidados estéticos.
 related_treatments:
   - dermaplaning-seixal
-  - peeling-facial-seixal
+  - peeling-rose-de-mer-seixal
   - microagulhamento-seixal
 faq:
   - question: É possível tornar a textura da pele mais uniforme?

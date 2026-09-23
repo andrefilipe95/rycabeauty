@@ -9,7 +9,7 @@ image: /assets/images/problemas/manchas-hiperpigmentacao-v2.webp
 image_alt: Retrato com alterações de pigmentação visíveis na face
 intro: As manchas podem ter diferentes aparências e origens. Observar a sua tonalidade, localização e evolução ajuda a perceber que cuidados poderão ser considerados.
 related_treatments:
-  - peeling-facial-seixal
+  - peeling-rose-de-mer-seixal
   - microagulhamento-seixal
 faq:
   - question: Todas as manchas podem ser tratadas num espaço de estética?
