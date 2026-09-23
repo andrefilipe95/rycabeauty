@@ -10,12 +10,6 @@
   image: /assets/images/problemas/manchas-hiperpigmentacao-v2.webp
   alt: Retrato com alterações de pigmentação visíveis na face
   featured: true
-- slug: pele-oleosa
-  name: Pele oleosa
-  summary: Brilho excessivo, sensação oleosa e poros mais visíveis podem surgir em diferentes zonas do rosto.
-  image: /assets/images/problemas/pele-oleosa-v2.webp
-  alt: Retrato com brilho natural mais visível na zona T do rosto
-  featured: false
 - slug: pontos-negros-e-poros-obstruidos
   name: Pontos negros, poros visíveis e obstruídos
   summary: A acumulação de sebo e células à superfície pode tornar os poros mais visíveis.
@@ -34,24 +28,30 @@
   image: /assets/images/problemas/marcas-acne-v2.webp
   alt: Retrato com marcas de acne estabilizadas e pequenas irregularidades
   featured: true
+- slug: excesso-de-penugem
+  name: Excesso de Penugem
+  summary: A penugem facial mais visível pode alterar a suavidade aparente da pele e o acabamento da maquilhagem.
+  image: /assets/images/problemas/excesso-penugem-v2.webp
+  alt: Perfil facial com penugem fina visível na zona da face
+  featured: true
 - slug: textura-irregular
   name: Textura irregular
   summary: Aspereza e pequenas irregularidades podem tornar a pele menos uniforme ao olhar e ao toque.
   image: /assets/images/problemas/textura-irregular-v2.webp
   alt: Perfil facial com pequenas diferenças de textura na pele
   featured: false
-- slug: excesso-de-penugem
-  name: Excesso de Penugem
-  summary: A penugem facial mais visível pode alterar a suavidade aparente da pele e o acabamento da maquilhagem.
-  image: /assets/images/problemas/excesso-penugem-v2.webp
-  alt: Perfil facial com penugem fina visível na zona da face
+- slug: pele-oleosa
+  name: Pele oleosa
+  summary: Brilho excessivo, sensação oleosa e poros mais visíveis podem surgir em diferentes zonas do rosto.
+  image: /assets/images/problemas/pele-oleosa-v2.webp
+  alt: Retrato com brilho natural mais visível na zona T do rosto
   featured: false
 - slug: flacidez-facial
   name: Flacidez facial
   summary: A perda gradual de firmeza pode tornar-se mais visível no contorno facial, nas bochechas e no pescoço.
   image: /assets/images/problemas/flacidez-facial-v2.webp
   alt: Perfil de rosto maduro com flacidez visível no contorno facial e no pescoço
-  featured: true
+  featured: false
 - slug: linhas-finas-e-envelhecimento
   name: Linhas finas e sinais de envelhecimento
   summary: Linhas, alterações de textura e menor uniformidade podem tornar-se mais visíveis com o tempo.
