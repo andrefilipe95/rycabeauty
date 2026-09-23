@@ -36,6 +36,8 @@
   image: /assets/images/tratamentos/dermaplaning-seixal.webp
   alt: Sessão de dermaplaning facial
   concerns:
+    - slug: excesso-de-penugem
+      name: Excesso de penugem
     - slug: textura-irregular
       name: Textura irregular
     - slug: pele-baca-e-falta-de-luminosidade

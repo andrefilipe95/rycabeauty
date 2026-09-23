@@ -98,6 +98,7 @@ for name in [
     "pelos-indesejados-encravados-v2",
     "marcas-acne-v2",
     "textura-irregular-v2",
+    "excesso-penugem-v2",
     "flacidez-facial-v2",
     "linhas-finas-envelhecimento-v2",
     "pele-baca-luminosidade-v2",
