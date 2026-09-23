@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   const revealItems = [...document.querySelectorAll(
-    ".section-heading, .service-card, .concern-card, .comparison-card, .instagram-reel, .about-grid > *, .contact-heading, .contact-location, .contact-form, .faq details, .google-rating-card, .testimonial-card, .testimonial-note, .custom-protocols, .empty-state"
+    ".section-heading, .service-card, .concern-card, .comparison-card, .instagram-reel, .about-grid > *, .contact-heading, .contact-location, .contact-form, .faq details, .google-rating-card, .testimonial-card, .testimonial-note, .pricing-trigger, .custom-protocols, .empty-state"
   )];
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const progressBar = document.querySelector("[data-scroll-progress]");
