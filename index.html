@@ -11,8 +11,8 @@ permalink: /
     <source
       media="(max-width: 680px)"
       srcset="
-        /assets/images/hero-erica-ryca-beauty-mobile-600.webp 600w,
-        /assets/images/hero-erica-ryca-beauty-mobile-800.webp 800w,
+        /assets/images/hero-erica-ryca-beauty-mobile-600.webp  600w,
+        /assets/images/hero-erica-ryca-beauty-mobile-800.webp  800w,
         /assets/images/hero-erica-ryca-beauty-mobile.webp     1440w
       "
       sizes="100vw"
@@ -38,7 +38,7 @@ permalink: /
   </picture>
   <div class="hero-shade"></div>
   <div class="container hero-content">
-    <p class="eyebrow light">Estética no Seixal e Almada</p>
+    <p class="eyebrow light">Estética no Seixal</p>
     <h1>Tratamentos Faciais e Depilação a Laser</h1>
     <p class="hero-emotion">
       Ryca de autoestima, Ryca de autoconfiança e Ryca de uma pele que te faz
@@ -132,7 +132,8 @@ permalink: /
       </article>
       {% endfor %}
     </div>
-    {% include custom-protocols.html compact=true heading_id="home-custom-protocols-title" %}
+    {% include custom-protocols.html compact=true
+    heading_id="home-custom-protocols-title" %}
   </div>
 </section>
 
@@ -149,8 +150,8 @@ permalink: /
     <div class="concern-grid">
       {% for item in site.data.problems %} {% if item.featured %}
       <article class="concern-card service-card">
-        {% assign small_image = item.image | replace: '.webp', '-480.webp' %}
-        {% assign large_image = item.image | replace: '.webp', '-1600.webp' %}
+        {% assign small_image = item.image | replace: '.webp', '-480.webp' %} {%
+        assign large_image = item.image | replace: '.webp', '-1600.webp' %}
         <button
           class="concern-image-trigger"
           type="button"
