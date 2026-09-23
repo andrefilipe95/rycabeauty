@@ -1,0 +1,79 @@
+campaign:
+  name: Laser corpo completo
+  price: 55
+  usual_price: 65
+  savings: 10
+  dates: 25 e 26 de setembro
+  month_location: Setembro · Seixal
+
+laser:
+  individual:
+    - name: Buço
+      price: 8
+    - name: Queixo
+      price: 9
+    - name: Pescoço
+      price: 10
+    - name: Maçãs do rosto
+      price: 10
+    - name: Entre sobrancelhas
+      price: 8
+    - name: Axilas
+      price: 15
+    - name: Peito
+      price: 15
+    - name: Braços completos
+      price: 25
+    - name: Antebraços e mãos
+      price: 15
+    - name: Costas
+      price: 20
+    - name: Barriga
+      price: 15
+    - name: Virilha — linha do biquíni
+      price: 20
+    - name: Virilha completa
+      price: 25
+    - name: Glúteos e ancas
+      price: 20
+    - name: Perianal
+      price: 15
+    - name: Coxas
+      price: 20
+    - name: Meias pernas e pés
+      price: 15
+    - name: Pernas completas
+      price: 35
+  packs:
+    - name: Pack 1
+      price: 15
+      description: Buço + Queixo
+      note: Pode ser adicionado a qualquer serviço.
+    - name: Pack 2
+      price: 30
+      description: Rosto completo
+      note: Buço + Queixo + Maçãs do rosto + Entre sobrancelhas.
+    - name: Pack 3
+      price: 30
+      description: Axilas + Virilha completa
+    - name: Pack 4
+      price: 40
+      description: Axilas + Virilha completa + Perianal
+    - name: Pack 5
+      price: 40
+      description: Axilas + Virilha completa + Meias pernas e pés
+    - name: Pack 6
+      price: 55
+      description: Axilas + Virilha completa + Pernas completas
+    - name: Pack RYCA
+      price: 65
+      description: Corpo completo
+      featured: true
+
+personalized:
+  price_label: Valor sob consulta
+  items:
+    - Acne
+    - Hiperpigmentação
+    - Rejuvenescimento facial
+    - Marcas de acne e textura irregular

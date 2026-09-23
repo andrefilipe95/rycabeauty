@@ -61,18 +61,19 @@ permalink: /
     <aside class="laser-campaign__spotlight" aria-label="Destaque da campanha">
       <p class="laser-campaign__badge">Preço especial</p>
       <h2 class="laser-campaign__service" id="laser-campaign-title">
-        Laser corpo completo
+        {{ site.data.pricing.campaign.name }}
       </h2>
-      <div class="laser-campaign__spotlight-price" aria-label="55 euros">
-        <span>55</span><sup>€</sup>
+      <div class="laser-campaign__spotlight-price" aria-label="{{ site.data.pricing.campaign.price }} euros">
+        <span>{{ site.data.pricing.campaign.price }}</span><sup>€</sup>
       </div>
       <p class="laser-campaign__discount">
-        Antes <s>65 €</s> <strong>· Poupe 10 €</strong>
+        Antes <s>{{ site.data.pricing.campaign.usual_price }} €</s>
+        <strong>· Poupe {{ site.data.pricing.campaign.savings }} €</strong>
       </p>
-      <div class="laser-campaign__date" aria-label="25 e 26 de setembro">
+      <div class="laser-campaign__date" aria-label="{{ site.data.pricing.campaign.dates }}">
         <span>25</span><small>e</small><span>26</span>
       </div>
-      <p class="laser-campaign__month">Setembro · Seixal</p>
+      <p class="laser-campaign__month">{{ site.data.pricing.campaign.month_location }}</p>
     </aside>
 
     <div class="laser-campaign__actions">
@@ -132,8 +133,10 @@ permalink: /
       </article>
       {% endfor %}
     </div>
+    {% include pricing-trigger.html %}
     {% include custom-protocols.html compact=true
     heading_id="home-custom-protocols-title" %}
+    {% include pricing-dialog.html %}
   </div>
 </section>
 

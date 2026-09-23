@@ -268,6 +268,28 @@ expect(
   "formulário: email submetido incorretamente",
 );
 
+await page.goto(`${base}/tratamentos/`, { waitUntil: "networkidle" });
+await page.locator("[data-pricing-open]").click();
+expect(
+  await page.locator("[data-pricing-dialog]").evaluate((dialog) => dialog.open),
+  "preçário: a janela não abriu",
+);
+expect(
+  (await page.locator("[data-pricing-dialog] .pricing-dialog__section").count()) === 4,
+  "preçário: faltam categorias de preços",
+);
+await page.keyboard.press("Escape");
+expect(
+  !(await page.locator("[data-pricing-dialog]").evaluate((dialog) => dialog.open)),
+  "preçário: a janela não fechou com Escape",
+);
+await page.locator("[data-pricing-open]").click();
+await page.locator("[data-pricing-close]").click();
+expect(
+  !(await page.locator("[data-pricing-dialog]").evaluate((dialog) => dialog.open)),
+  "preçário: o botão de fechar não funcionou",
+);
+
 await page.goto(`${base}/tratamentos/limpeza-de-pele-seixal/`, {
   waitUntil: "networkidle",
 });
@@ -297,6 +319,6 @@ if (failures.length) {
   process.exitCode = 1;
 } else {
   console.log(
-    "Browser QA concluído: mobile, tablet, desktop, menu, mapa, WhatsApp, email e página de tratamento.",
+    "Browser QA concluído: mobile, tablet, desktop, menu, mapa, WhatsApp, email, preçário e página de tratamento.",
   );
 }

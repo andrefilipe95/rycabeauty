@@ -200,6 +200,35 @@ document.addEventListener("DOMContentLoaded", () => {
     if (event.key === "Escape") closeImageLightbox();
   });
 
+  const pricingDialog = document.querySelector("[data-pricing-dialog]");
+  const pricingCloseButton = pricingDialog?.querySelector("[data-pricing-close]");
+  let pricingTrigger = null;
+
+  const closePricingDialog = () => {
+    if (!pricingDialog?.open) return;
+    pricingDialog.close();
+  };
+
+  document.querySelectorAll("[data-pricing-open]").forEach((trigger) => {
+    trigger.addEventListener("click", () => {
+      if (!pricingDialog || typeof pricingDialog.showModal !== "function") return;
+      pricingTrigger = trigger;
+      pricingDialog.showModal();
+      document.body.classList.add("pricing-dialog-open");
+      pricingCloseButton?.focus();
+    });
+  });
+
+  pricingCloseButton?.addEventListener("click", closePricingDialog);
+  pricingDialog?.addEventListener("click", (event) => {
+    if (event.target === pricingDialog) closePricingDialog();
+  });
+  pricingDialog?.addEventListener("close", () => {
+    document.body.classList.remove("pricing-dialog-open");
+    pricingTrigger?.focus();
+    pricingTrigger = null;
+  });
+
   const updateInstagramFrameHeights = () => {
     document
       .querySelectorAll("[data-instagram-reel].is-loaded")

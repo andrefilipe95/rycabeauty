@@ -14,16 +14,13 @@
   </div>
   <div class="custom-protocols__details">
     <ul aria-label="Preocupações abrangidas pelos protocolos personalizados">
-      <li>Acne</li>
-      <li>Hiperpigmentação</li>
-      <li>Rejuvenescimento facial</li>
-      <li>Marcas de acne e textura irregular</li>
+      {% for item in site.data.pricing.personalized.items %}<li>{{ item }}</li>{% endfor %}
     </ul>
     <div class="custom-protocols__action">
-      <p><span>Investimento</span><strong>Valor sob consulta</strong></p>
-      <a class="button" href="{{ '/contactos/' | relative_url }}"
-        >Marcar avaliação</a
-      >
+      <p><span>Investimento</span><strong>{{ site.data.pricing.personalized.price_label }}</strong></p>
+      <div class="custom-protocols__buttons">
+        <a class="button" href="{{ '/contactos/' | relative_url }}">Marcar avaliação</a>
+      </div>
     </div>
   </div>
 </aside>
