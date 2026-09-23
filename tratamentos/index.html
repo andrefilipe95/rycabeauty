@@ -44,6 +44,11 @@ permalink: /tratamentos/
         <div class="card-body">
           <h3>{{ item.name }}</h3>
           <p>{{ item.short }}</p>
+          {% if item.price %}
+          <p class="treatment-price">
+            <span>Preço</span><strong>{{ item.price }} €</strong>
+          </p>
+          {% endif %}
           {% if item.concerns %}
           <p class="concern-label">Pode ajudar a melhorar:</p>
           <ul class="concern-tags" aria-label="Preocupações relacionadas">
@@ -66,6 +71,9 @@ permalink: /tratamentos/
       </article>
       {% endfor %}
     </div>
+
+    {% include custom-protocols.html %}
+
     {% include treatment-guidance.html %}
   </div>
 </section>

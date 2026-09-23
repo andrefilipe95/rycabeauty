@@ -3,6 +3,7 @@
   short: Limpeza profunda, desobstrução de poros e cuidado facial adaptado às características da pele.
   image: /assets/images/tratamentos/limpeza-pele-profunda-seixal.webp
   alt: Profissional a realizar uma limpeza de pele
+  price: 45
   concerns:
     - slug: pele-oleosa
       name: Pele oleosa
@@ -23,6 +24,7 @@
   short: Tratamento de renovação da pele que ajuda a melhorar a textura, marcas e a uniformidade da pele.
   image: /assets/images/tratamentos/microagulhamento-seixal.webp
   alt: Sessão de microagulhamento facial
+  price: 45
   concerns:
     - slug: marcas-de-acne
       name: Marcas de acne
@@ -35,6 +37,7 @@
   short: Procedimento que remove delicadamente as células mortas à superfície e a penugem facial, deixando a pele mais lisa e suave.
   image: /assets/images/tratamentos/dermaplaning-seixal.webp
   alt: Sessão de dermaplaning facial
+  price: 30
   concerns:
     - slug: excesso-de-penugem
       name: Excesso de penugem

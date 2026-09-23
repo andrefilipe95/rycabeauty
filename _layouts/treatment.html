@@ -2,6 +2,8 @@
 layout: default
 ---
 
+{% assign treatment_data = site.data.treatments | where: "slug", page.slug |
+first %}
 <article>
   <header class="inner-hero">
     <div class="container narrow">
@@ -9,6 +11,11 @@ layout: default
       <p class="eyebrow">Tratamento</p>
       <h1>{{ page.title }}</h1>
       <p class="lead">{{ page.intro }}</p>
+      {% if treatment_data.price %}
+      <p class="treatment-detail-price">
+        <span>Preço</span><strong>{{ treatment_data.price }} €</strong>
+      </p>
+      {% endif %}
       <a class="button" href="{{ '/contactos/' | relative_url }}"
         >Marcar avaliação</a
       >
@@ -16,8 +23,7 @@ layout: default
   </header>
   <div class="container article-grid">
     <div class="prose">
-      {% assign treatment_data = site.data.treatments | where: "slug", page.slug
-      | first %} {% if treatment_data.concerns %}
+      {% if treatment_data.concerns %}
       <section
         class="treatment-concerns"
         aria-labelledby="related-concerns-title"
@@ -93,7 +99,14 @@ layout: default
         "areaServed": [
           {"@type": "City", "name": "Seixal"},
           {"@type": "City", "name": "Almada"}
-        ]
+        ]{% if treatment_data.price %},
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "EUR",
+          "price": {{ treatment_data.price | jsonify }},
+          "availability": "https://schema.org/InStock",
+          "url": {{ page.url | absolute_url | jsonify }}
+        }{% endif %}
       },
       {
         "@type": "BreadcrumbList",

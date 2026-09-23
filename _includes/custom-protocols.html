@@ -1,0 +1,29 @@
+<aside
+  class="custom-protocols{% if include.compact %} custom-protocols--compact{% endif %}"
+  aria-labelledby="{{ include.heading_id | default: 'custom-protocols-title' }}"
+>
+  <div class="custom-protocols__intro">
+    <p class="eyebrow">Cuidado pensado para a sua pele</p>
+    <h2 id="{{ include.heading_id | default: 'custom-protocols-title' }}">
+      Protocolos personalizados
+    </h2>
+    <p>
+      Combinações de cuidados definidas após avaliação, de acordo com as
+      características da pele e os objetivos de cada pessoa.
+    </p>
+  </div>
+  <div class="custom-protocols__details">
+    <ul aria-label="Preocupações abrangidas pelos protocolos personalizados">
+      <li>Acne</li>
+      <li>Hiperpigmentação</li>
+      <li>Rejuvenescimento facial</li>
+      <li>Marcas de acne e textura irregular</li>
+    </ul>
+    <div class="custom-protocols__action">
+      <p><span>Investimento</span><strong>Valor sob consulta</strong></p>
+      <a class="button" href="{{ '/contactos/' | relative_url }}"
+        >Marcar avaliação</a
+      >
+    </div>
+  </div>
+</aside>
