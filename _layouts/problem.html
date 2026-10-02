@@ -9,9 +9,6 @@ layout: default
       <p class="eyebrow">Preocupação da pele</p>
       <h1>{{ page.title }}</h1>
       <p class="lead">{{ page.intro }}</p>
-      <a class="button" href="{{ '/contactos/' | relative_url }}"
-        >Marcar avaliação</a
-      >
     </div>
   </header>
   <div class="container article-grid">
@@ -55,9 +52,7 @@ layout: default
           A avaliação permite esclarecer aquilo que a preocupa e identificar os
           tratamentos que poderão fazer sentido.
         </p>
-        <a class="button" href="{{ '/contactos/' | relative_url }}"
-          >Solicitar orientação</a
-        >
+        {% include booking-actions.html %}
       </div>
     </div>
     <aside class="article-aside">

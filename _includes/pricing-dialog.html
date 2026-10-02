@@ -20,6 +20,9 @@
     </header>
 
     <div class="pricing-dialog__content">
+      {% comment %}
+      Destaque promocional temporariamente oculto após o fim da campanha.
+      Para reutilizar, atualizar os dados em _data/pricing.yml e remover este comentário.
       <section class="pricing-dialog__campaign" aria-labelledby="campaign-pricing-title">
         <div>
           <p class="eyebrow">Campanha em destaque</p>
@@ -31,6 +34,7 @@
           <span>Antes <s>{{ site.data.pricing.campaign.usual_price }} €</s></span>
         </p>
       </section>
+      {% endcomment %}
 
       <section class="pricing-dialog__section" aria-labelledby="facial-pricing-title">
         <h3 id="facial-pricing-title">Tratamentos faciais</h3>
@@ -82,7 +86,7 @@
 
     <footer class="pricing-dialog__footer">
       <p>Os valores podem ser confirmados no momento da marcação.</p>
-      <a class="button" href="{{ '/contactos/' | relative_url }}">Marcar avaliação</a>
+      <a class="button" href="{{ site.data.business.booking_url }}">Marcar online</a>
     </footer>
   </div>
 </dialog>

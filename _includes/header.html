@@ -18,6 +18,7 @@
       <a href="{{ '/sobre/' | relative_url }}" {% if page.url contains '/sobre/' %}aria-current="page"{% endif %}>Sobre</a>
       <a href="{{ '/blog/' | relative_url }}" {% if page.url contains '/blog/' %}aria-current="page"{% endif %}>Blog</a>
       <a href="{{ contact_url }}" {% if page.url contains '/contactos/' %}aria-current="page"{% endif %}>Contactos</a>
+      <a class="nav-booking-link" href="{{ site.data.business.booking_url }}">Marcar online</a>
     </nav>
     <div class="header-socials" aria-label="Redes sociais da Ryca Beauty">
       <a
@@ -43,6 +44,6 @@
         </svg>
       </a>
     </div>
-    <a class="button button-small header-cta" href="{{ contact_url }}">Marcar avaliação</a>
+    <a class="button button-small header-cta" href="{{ site.data.business.booking_url }}">Marcar online</a>
   </div>
 </header>

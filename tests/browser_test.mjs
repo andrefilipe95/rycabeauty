@@ -70,6 +70,20 @@ for (const viewport of [
     viewport.width <= 900 ? state.menuVisible : !state.menuVisible,
     `${viewport.name}: estado incorreto do menu responsivo`,
   );
+  const protocolButtonWidths = await page
+    .locator(".custom-protocols__buttons .button")
+    .evaluateAll((buttons) => buttons.map((button) => button.getBoundingClientRect().width));
+  expect(
+    protocolButtonWidths.length === 2 &&
+      Math.abs(protocolButtonWidths[0] - protocolButtonWidths[1]) < 1,
+    `${viewport.name}: botões dos protocolos têm larguras diferentes`,
+  );
+  if (viewport.name === "tablet") {
+    expect(
+      protocolButtonWidths[0] >= 300,
+      "tablet: os botões dos protocolos estão demasiado estreitos",
+    );
+  }
   const imageLocator = page.locator("img");
   const imageCount = await imageLocator.count();
   for (let index = 0; index < imageCount; index += 1) {
@@ -106,6 +120,11 @@ expect(
 expect(
   await page.locator("#main-nav").isVisible(),
   "menu móvel: navegação não ficou visível",
+);
+expect(
+  (await page.locator(".nav-booking-link").getAttribute("href")) ===
+    "https://www.rycabeauty.pt/agenda/",
+  "menu móvel: ligação para a agenda incorreta",
 );
 expect(
   (await page
@@ -160,6 +179,21 @@ expect(
 expect(
   await problemPage.getByText("Clique na fotografia para ampliar").isVisible(),
   "página da preocupação: falta a indicação para ampliar",
+);
+expect(
+  (await problemPage.locator(".inner-hero .booking-actions").count()) === 0,
+  "página da preocupação: as ações não devem aparecer no cabeçalho",
+);
+expect(
+  (await problemPage.locator(".article-cta .booking-actions .button").count()) === 2,
+  "página da preocupação: as ações devem permanecer no final",
+);
+const ctaButtonWidths = await problemPage
+  .locator(".article-cta .booking-actions .button")
+  .evaluateAll((buttons) => buttons.map((button) => button.getBoundingClientRect().width));
+expect(
+  Math.abs(ctaButtonWidths[0] - ctaButtonWidths[1]) < 1,
+  "página da preocupação: os botões finais devem ter a mesma largura",
 );
 await problemPage.locator("[data-lightbox-open]").click();
 expect(
@@ -224,6 +258,10 @@ expect(
 expect(
   (await page.locator("[data-instagram-reel]").count()) === 3,
   "galeria: devem existir três vídeos do Instagram",
+);
+expect(
+  (await page.locator(".contact-path").count()) === 0,
+  "contactos: os cartões redundantes de marcação não devem ser apresentados",
 );
 
 await page.getByLabel("Nome *").fill("Teste Local");
@@ -293,6 +331,19 @@ expect(
 await page.goto(`${base}/tratamentos/limpeza-de-pele-seixal/`, {
   waitUntil: "networkidle",
 });
+expect(
+  (await page.locator(".inner-hero .booking-actions").count()) === 0,
+  "tratamento: as ações não devem aparecer no cabeçalho",
+);
+expect(
+  (await page.locator(".article-cta .booking-actions .button").count()) === 2,
+  "tratamento: as ações devem permanecer no final",
+);
+expect(
+  (await page.locator(".article-cta .booking-actions .button").first().getAttribute("href")) ===
+    "https://www.rycabeauty.pt/agenda/",
+  "tratamento: ligação para a agenda incorreta",
+);
 expect(
   (await page.locator("h1").count()) === 1,
   "tratamento: deve existir um único H1",

@@ -16,9 +16,6 @@ first %}
         <span>Preço</span><strong>{{ treatment_data.price }} €</strong>
       </p>
       {% endif %}
-      <a class="button" href="{{ '/contactos/' | relative_url }}"
-        >Marcar avaliação</a
-      >
     </div>
   </header>
   <div class="container article-grid">
@@ -59,9 +56,7 @@ first %}
           A avaliação tem em conta as características da sua pele, as suas
           preocupações e os objetivos que pretende alcançar.
         </p>
-        <a class="button" href="{{ '/contactos/' | relative_url }}"
-          >Solicitar orientação</a
-        >
+        {% include booking-actions.html %}
       </div>
       <h2>Tratamentos relacionados</h2>
       <ul class="related-list">
