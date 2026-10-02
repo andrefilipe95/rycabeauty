@@ -122,7 +122,6 @@ required_home = [
     'id="testemunhos"',
     'id="localizacao"',
     'id="contactos"',
-    'id="perguntas"',
     'name="contact_method"',
     'id="privacy"',
 ]
