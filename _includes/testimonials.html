@@ -3,14 +3,15 @@
   id="testemunhos"
   aria-labelledby="testimonials-title"
 >
-  <div class="container narrow center">
-    <p class="eyebrow">Experiências reais</p>
-    <h2 id="testimonials-title">Testemunhos</h2>
-    <p>
-      Cada experiência é única. Aqui poderá conhecer a opinião de clientes que
-      confiaram na Ryca Beauty para cuidar da sua pele.
-    </p>
-    <div class="google-rating-card">
+  <div class="container testimonials-container center">
+    <div class="testimonials-intro narrow center">
+      <p class="eyebrow">Experiências reais</p>
+      <h2 id="testimonials-title">Testemunhos</h2>
+      <p>
+        Cada experiência é única. Aqui poderá conhecer a opinião de clientes que
+        confiaram na Ryca Beauty para cuidar da sua pele.
+      </p>
+      <div class="google-rating-card">
       <div class="google-rating-card__source">
         <span class="google-rating-card__mark" aria-hidden="true">G</span>
         <span>Avaliações no Google</span>
@@ -40,13 +41,43 @@
         rel="noopener noreferrer"
         >Ver avaliações no Google</a
       >
+      </div>
     </div>
     {% assign authorized_testimonials = site.data.testimonials | where:
     "authorized", true %} {% if authorized_testimonials.size > 0 %}
-    <h3 class="testimonial-list-title">Testemunhos de clientes</h3>
-    <div class="testimonial-grid">
+    <div class="testimonial-carousel" data-testimonial-carousel>
+      <div class="testimonial-carousel__controls" aria-label="Navegar pelos testemunhos">
+        <div class="testimonial-carousel__arrows">
+          <button
+            class="testimonial-carousel__button"
+            type="button"
+            data-testimonial-previous
+            aria-label="Ver testemunho anterior"
+            disabled
+          >
+            <span aria-hidden="true">←</span>
+          </button>
+          <button
+            class="testimonial-carousel__button"
+            type="button"
+            data-testimonial-next
+            aria-label="Ver testemunho seguinte"
+          >
+            <span aria-hidden="true">→</span>
+          </button>
+        </div>
+      </div>
+      <div
+        class="testimonial-grid"
+        data-testimonial-track
+        tabindex="0"
+        aria-label="Testemunhos de clientes autorizados"
+      >
       {% for testimonial in authorized_testimonials %}
-      <figure class="testimonial-card">
+      <figure
+        class="testimonial-card"
+        aria-label="Testemunho {{ forloop.index }} de {{ authorized_testimonials.size }}"
+      >
         <blockquote>“{{ testimonial.text }}”</blockquote>
         <figcaption>
           <strong>{{ testimonial.name }}</strong>
@@ -56,6 +87,18 @@
         </figcaption>
       </figure>
       {% endfor %}
+      </div>
+      <div class="testimonial-carousel__dots" aria-label="Escolher testemunho">
+        {% for testimonial in authorized_testimonials %}
+        <button
+          class="testimonial-carousel__dot{% if forloop.first %} is-active{% endif %}"
+          type="button"
+          data-testimonial-dot="{{ forloop.index0 }}"
+          aria-label="Mostrar testemunho {{ forloop.index }} de {{ authorized_testimonials.size }}"
+          {% if forloop.first %}aria-current="true"{% endif %}
+        ></button>
+        {% endfor %}
+      </div>
     </div>
     {% else %}
     <p class="testimonial-note">

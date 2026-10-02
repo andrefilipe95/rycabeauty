@@ -272,6 +272,68 @@ document.addEventListener("DOMContentLoaded", () => {
 
   window.addEventListener("resize", updateInstagramFrameHeights);
 
+  document.querySelectorAll("[data-testimonial-carousel]").forEach((carousel) => {
+    const track = carousel.querySelector("[data-testimonial-track]");
+    const previousButton = carousel.querySelector("[data-testimonial-previous]");
+    const nextButton = carousel.querySelector("[data-testimonial-next]");
+    const dots = [...carousel.querySelectorAll("[data-testimonial-dot]")];
+
+    const getScrollStep = () => {
+      const card = track?.querySelector(".testimonial-card");
+      if (!card || !track) return 0;
+      const gap = Number.parseFloat(window.getComputedStyle(track).columnGap) || 0;
+      return card.getBoundingClientRect().width + gap;
+    };
+
+    const updateCarouselControls = () => {
+      if (!track || !previousButton || !nextButton) return;
+      const maximumScroll = Math.max(0, track.scrollWidth - track.clientWidth);
+      previousButton.disabled = track.scrollLeft <= 2;
+      nextButton.disabled = track.scrollLeft >= maximumScroll - 2;
+      const step = getScrollStep();
+      const currentIndex = step > 0
+        ? Math.min(dots.length - 1, Math.max(0, Math.round(track.scrollLeft / step)))
+        : 0;
+      const visibleCount = step > 0
+        ? Math.max(1, Math.round((track.clientWidth + 1) / step))
+        : 1;
+      const lastVisibleIndex = Math.min(dots.length - 1, currentIndex + visibleCount - 1);
+      dots.forEach((dot, index) => {
+        const isActive = index >= currentIndex && index <= lastVisibleIndex;
+        dot.classList.toggle("is-active", isActive);
+        if (index === currentIndex) dot.setAttribute("aria-current", "true");
+        else dot.removeAttribute("aria-current");
+      });
+    };
+
+    const moveCarousel = (direction) => {
+      if (!track) return;
+      track.scrollBy({
+        left: direction * getScrollStep(),
+        behavior: reduceMotion ? "auto" : "smooth",
+      });
+    };
+
+    previousButton?.addEventListener("click", () => moveCarousel(-1));
+    nextButton?.addEventListener("click", () => moveCarousel(1));
+    dots.forEach((dot, index) => {
+      dot.addEventListener("click", () => {
+        track?.scrollTo({
+          left: index * getScrollStep(),
+          behavior: reduceMotion ? "auto" : "smooth",
+        });
+      });
+    });
+    track?.addEventListener("scroll", updateCarouselControls, { passive: true });
+    track?.addEventListener("keydown", (event) => {
+      if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+      event.preventDefault();
+      moveCarousel(event.key === "ArrowRight" ? 1 : -1);
+    });
+    window.addEventListener("resize", updateCarouselControls);
+    updateCarouselControls();
+  });
+
   document.querySelectorAll("[data-before-after]").forEach((comparison) => {
     const range = comparison.querySelector("[data-before-after-range]");
     const updateComparison = () => {

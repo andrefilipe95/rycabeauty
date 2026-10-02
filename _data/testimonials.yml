@@ -6,6 +6,18 @@
 #   service: "Limpeza de Pele Profunda"
 #   text: "Texto autorizado pela cliente."
 #   authorized: false
+- name: "Vera BORGES MIRANDA"
+  service: "Avaliação no Google"
+  text: "Adorei a experiência! 🥰 Fui muito bem recebida, com muita simpatia, atenção e profissionalismo. O espaço é super acolhedor e faz-nos sentir bem desde o primeiro momento. Um serviço de muito boa qualidade. Recomendo!"
+  authorized: true
+- name: "Edite Miranda"
+  service: "Avaliação no Google"
+  text: "Recomendo muito, pelo excelente serviço prestado, com muito profissionalismo e acolhimento excepcional. Muito delicada, comunicativa e dá feedback e orientações durante todo o procedimento, aconselhou também relativo os cuidados a ter no pós tratamento, de modo potencializar ainda mais o tratamento feito. O RESULTADO FOI MARAVILHOSO E VOLTAREI COM CERTEZA. SUPER RECOMENDOOOOO..... :-D"
+  authorized: true
+- name: "Vera Neto"
+  service: "Avaliação no Google"
+  text: "Muito profissionalismo, muito cuidado e resultados muito bons. Recomendo!"
+  authorized: true
 - name: "André N."
   service: "Limpeza de Pele Profunda"
   text: "Fiz uma limpeza de pele com a Sra. Érica e correu tudo muito bem. Recomendo e voltarei 🙏"

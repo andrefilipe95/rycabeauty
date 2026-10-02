@@ -260,6 +260,65 @@ expect(
   "galeria: devem existir três vídeos do Instagram",
 );
 expect(
+  (await page.locator(".testimonial-card").count()) === 4,
+  "testemunhos: devem ser apresentadas as quatro avaliações autorizadas",
+);
+expect(
+  JSON.stringify(await page.locator(".testimonial-card figcaption strong").allTextContents()) ===
+    JSON.stringify(["Vera BORGES MIRANDA", "Edite Miranda", "Vera Neto", "André N."]),
+  "testemunhos: a ordem das avaliações está incorreta",
+);
+expect(
+  (await page.locator(".testimonial-carousel__button").count()) === 2,
+  "testemunhos: faltam os controlos do carrossel",
+);
+expect(
+  (await page.locator("[data-testimonial-dot]").count()) === 4,
+  "testemunhos: faltam os indicadores das avaliações",
+);
+const testimonialTrack = page.locator("[data-testimonial-track]");
+const testimonialDimensions = await testimonialTrack.evaluate((track) => ({
+  trackWidth: track.clientWidth,
+  cardWidth: track.querySelector(".testimonial-card")?.getBoundingClientRect().width || 0,
+}));
+expect(
+  testimonialDimensions.cardWidth >= testimonialDimensions.trackWidth * 0.45 &&
+    testimonialDimensions.cardWidth <= testimonialDimensions.trackWidth * 0.52,
+  "testemunhos: devem aparecer dois cartões de cada vez no computador",
+);
+const visibleTestimonialMetrics = await page
+  .locator(".testimonial-card")
+  .evaluateAll((cards) => cards.slice(0, 2).map((card) => ({
+    height: card.getBoundingClientRect().height,
+    captionBottom: card.querySelector("figcaption")?.getBoundingClientRect().bottom || 0,
+  })));
+expect(
+  Math.abs(visibleTestimonialMetrics[0].height - visibleTestimonialMetrics[1].height) < 1,
+  "testemunhos: os cartões visíveis devem ter a mesma altura",
+);
+expect(
+  Math.abs(visibleTestimonialMetrics[0].captionBottom - visibleTestimonialMetrics[1].captionBottom) < 1,
+  "testemunhos: os nomes devem ficar alinhados no fundo dos cartões",
+);
+await page.locator("[data-testimonial-next]").click();
+await page.waitForTimeout(500);
+expect(
+  (await testimonialTrack.evaluate((track) => track.scrollLeft)) > 0,
+  "testemunhos: a seta seguinte não deslocou os cartões",
+);
+expect(
+  await page.locator("[data-testimonial-previous]").isEnabled(),
+  "testemunhos: a seta anterior não foi ativada depois da deslocação",
+);
+expect(
+  (await page.locator('[data-testimonial-dot][aria-current="true"]').getAttribute("data-testimonial-dot")) === "1",
+  "testemunhos: o indicador ativo não acompanhou a navegação",
+);
+expect(
+  (await page.locator(".google-rating-card").innerText()).includes("4 avaliações públicas"),
+  "testemunhos: o total de avaliações do Google está desatualizado",
+);
+expect(
   (await page.locator(".contact-path").count()) === 0,
   "contactos: os cartões redundantes de marcação não devem ser apresentados",
 );
