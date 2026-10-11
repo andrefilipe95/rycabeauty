@@ -260,6 +260,29 @@ expect(
   "galeria: devem existir três vídeos do Instagram",
 );
 expect(
+  await page.locator("#campanha-laser").isVisible(),
+  "campanha de laser: a secção deve estar visível",
+);
+const laserCampaignText = (await page.locator("#campanha-laser").innerText()).toUpperCase();
+expect(
+  laserCampaignText.includes("30") &&
+    laserCampaignText.includes("31") &&
+    laserCampaignText.includes("OUTUBRO") &&
+    laserCampaignText.includes("TORRE DA MARINHA"),
+  "campanha de laser: faltam as datas ou a localização",
+);
+expect(
+  (await page.locator("#campanha-laser .button").getAttribute("href")) ===
+    "https://www.rycabeauty.pt/agenda/",
+  "campanha de laser: a marcação deve abrir a agenda",
+);
+expect(
+  (await page.locator("#campanha-laser .laser-campaign__spotlight").evaluate(
+    (element) => element.getBoundingClientRect().width,
+  )) >= 850,
+  "campanha de laser: o destaque deve aproveitar a largura do computador",
+);
+expect(
   (await page.locator(".testimonial-card").count()) === 4,
   "testemunhos: devem ser apresentadas as quatro avaliações autorizadas",
 );

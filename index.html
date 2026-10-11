@@ -48,49 +48,44 @@ permalink: /
   </div>
 </section>
 
-{% comment %}
-Campanha especial de lançamento temporariamente oculta após o fim da campanha.
-Para reativar, remover este bloco de comentário Liquid mantendo a secção abaixo.
 <section
   class="section laser-campaign"
   id="campanha-laser"
   aria-labelledby="laser-campaign-title"
 >
   <div class="container laser-campaign__layout">
-    <div class="laser-campaign__content">
-      <p class="eyebrow light">Campanha especial de lançamento</p>
-    </div>
-
     <aside class="laser-campaign__spotlight" aria-label="Destaque da campanha">
-      <p class="laser-campaign__badge">Preço especial</p>
+      <p class="laser-campaign__badge">Próximas datas</p>
       <h2 class="laser-campaign__service" id="laser-campaign-title">
         {{ site.data.pricing.campaign.name }}
       </h2>
-      <div class="laser-campaign__spotlight-price" aria-label="{{ site.data.pricing.campaign.price }} euros">
-        <span>{{ site.data.pricing.campaign.price }}</span><sup>€</sup>
-      </div>
-      <p class="laser-campaign__discount">
-        Antes <s>{{ site.data.pricing.campaign.usual_price }} €</s>
-        <strong>· Poupe {{ site.data.pricing.campaign.savings }} €</strong>
-      </p>
       <div class="laser-campaign__date" aria-label="{{ site.data.pricing.campaign.dates }}">
-        <span>25</span><small>e</small><span>26</span>
+        <div class="laser-campaign__day">
+          <strong>{{ site.data.pricing.campaign.day_first }}</strong>
+          <span>{{ site.data.pricing.campaign.month }}</span>
+          <small>{{ site.data.pricing.campaign.weekday_first }}</small>
+        </div>
+        <span class="laser-campaign__date-separator" aria-hidden="true">e</span>
+        <div class="laser-campaign__day">
+          <strong>{{ site.data.pricing.campaign.day_second }}</strong>
+          <span>{{ site.data.pricing.campaign.month }}</span>
+          <small>{{ site.data.pricing.campaign.weekday_second }}</small>
+        </div>
       </div>
-      <p class="laser-campaign__month">{{ site.data.pricing.campaign.month_location }}</p>
+      <p class="laser-campaign__month">
+        {{ site.data.pricing.campaign.location }}
+      </p>
     </aside>
 
     <div class="laser-campaign__actions">
       <a
         class="button"
-        href="https://wa.me/{{ site.data.business.whatsapp_number }}?text=Ol%C3%A1%21%20Gostaria%20de%20garantir%20um%20hor%C3%A1rio%20na%20campanha%20de%20laser%20corpo%20completo."
-        target="_blank"
-        rel="noopener noreferrer"
+        href="{{ site.data.business.booking_url }}"
         >Garantir horário</a
       >
     </div>
   </div>
 </section>
-{% endcomment %}
 
 <section class="section treatments" id="tratamentos">
   <div class="container">

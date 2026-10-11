@@ -1,10 +1,12 @@
 campaign:
-  name: Laser corpo completo
-  price: 55
-  usual_price: 65
-  savings: 10
-  dates: 25 e 26 de setembro
-  month_location: Setembro · Seixal
+  name: Depilação a laser
+  dates: 30 e 31 de outubro
+  day_first: 30
+  day_second: 31
+  month: Outubro
+  weekday_first: Sexta-feira
+  weekday_second: Sábado
+  location: Torre da Marinha · Seixal
 
 laser:
   individual:
